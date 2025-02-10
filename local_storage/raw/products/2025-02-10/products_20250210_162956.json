@@ -1,0 +1,3152 @@
+[
+    {
+        "name": "Voluptatibus quaerat.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:14.995628",
+        "price": 98.75,
+        "id": 1
+    },
+    {
+        "name": "Amet harum adipisci aperiam.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:14.998112",
+        "price": 404.1,
+        "id": 2
+    },
+    {
+        "name": "Labore consectetur laborum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:14.999057",
+        "price": 2442.57,
+        "id": 3
+    },
+    {
+        "name": "Ullam laboriosam totam occaecati.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.000240",
+        "price": 1783.39,
+        "id": 4
+    },
+    {
+        "name": "Repellendus repudiandae.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.001375",
+        "price": 1882.97,
+        "id": 5
+    },
+    {
+        "name": "Aperiam rem amet.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.001847",
+        "price": 668.36,
+        "id": 6
+    },
+    {
+        "name": "Consequatur repellat odit.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.002119",
+        "price": 255.74,
+        "id": 7
+    },
+    {
+        "name": "Illum quia distinctio.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.002302",
+        "price": 74.61,
+        "id": 8
+    },
+    {
+        "name": "Praesentium mollitia perspiciatis.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.002462",
+        "price": 1674.24,
+        "id": 9
+    },
+    {
+        "name": "Reiciendis molestiae eum.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.002617",
+        "price": 1855.88,
+        "id": 10
+    },
+    {
+        "name": "Quod maxime eligendi.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.002766",
+        "price": 835.12,
+        "id": 11
+    },
+    {
+        "name": "Voluptas architecto.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.002894",
+        "price": 1413.33,
+        "id": 12
+    },
+    {
+        "name": "Alias labore fugit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.003021",
+        "price": 1198.45,
+        "id": 13
+    },
+    {
+        "name": "Qui perspiciatis est.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.003157",
+        "price": 1760.06,
+        "id": 14
+    },
+    {
+        "name": "Est fugiat delectus.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.003277",
+        "price": 1120.6,
+        "id": 15
+    },
+    {
+        "name": "Quia temporibus.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.003403",
+        "price": 228.19,
+        "id": 16
+    },
+    {
+        "name": "Odit tenetur.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.003528",
+        "price": 1737.54,
+        "id": 17
+    },
+    {
+        "name": "Nesciunt minus.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.003735",
+        "price": 165.71,
+        "id": 18
+    },
+    {
+        "name": "Accusantium nesciunt beatae.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.003870",
+        "price": 2226.29,
+        "id": 19
+    },
+    {
+        "name": "Quo totam.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.003994",
+        "price": 337.42,
+        "id": 20
+    },
+    {
+        "name": "Rem eius veniam nemo.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.004142",
+        "price": 1437.97,
+        "id": 21
+    },
+    {
+        "name": "Illum adipisci.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.004277",
+        "price": 2627.28,
+        "id": 22
+    },
+    {
+        "name": "Commodi.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.004422",
+        "price": 1325.18,
+        "id": 23
+    },
+    {
+        "name": "Perferendis dolore.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.004599",
+        "price": 966.13,
+        "id": 24
+    },
+    {
+        "name": "Fugiat architecto quas.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.004768",
+        "price": 2447.59,
+        "id": 25
+    },
+    {
+        "name": "Nulla dolor vero.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.004914",
+        "price": 126.26,
+        "id": 26
+    },
+    {
+        "name": "Fugit non.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.005054",
+        "price": 1836.15,
+        "id": 27
+    },
+    {
+        "name": "Nisi sapiente delectus.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.005199",
+        "price": 586.16,
+        "id": 28
+    },
+    {
+        "name": "Iure impedit.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.005491",
+        "price": 1761.96,
+        "id": 29
+    },
+    {
+        "name": "Repellat ex aut.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.005632",
+        "price": 1989.67,
+        "id": 30
+    },
+    {
+        "name": "Tenetur rerum sed.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.005777",
+        "price": 1746.69,
+        "id": 31
+    },
+    {
+        "name": "Magnam magni eos fugit.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.006036",
+        "price": 350.99,
+        "id": 32
+    },
+    {
+        "name": "Molestias odit.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.006172",
+        "price": 1545.27,
+        "id": 33
+    },
+    {
+        "name": "Asperiores aliquam reiciendis.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.006311",
+        "price": 1786.95,
+        "id": 34
+    },
+    {
+        "name": "Asperiores assumenda ipsa.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.006452",
+        "price": 1425.09,
+        "id": 35
+    },
+    {
+        "name": "Fugiat neque voluptate.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.006594",
+        "price": 1633.03,
+        "id": 36
+    },
+    {
+        "name": "Corporis eum corrupti aut.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.006737",
+        "price": 572.8,
+        "id": 37
+    },
+    {
+        "name": "Fugiat tempora.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.006884",
+        "price": 2770.97,
+        "id": 38
+    },
+    {
+        "name": "Praesentium deleniti aliquam.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.007029",
+        "price": 247.96,
+        "id": 39
+    },
+    {
+        "name": "Cumque molestiae.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.007160",
+        "price": 1036.33,
+        "id": 40
+    },
+    {
+        "name": "Ea unde ad.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.007289",
+        "price": 236.8,
+        "id": 41
+    },
+    {
+        "name": "Expedita tempore voluptatem.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.007421",
+        "price": 2446.74,
+        "id": 42
+    },
+    {
+        "name": "Possimus earum animi.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.007561",
+        "price": 2316.19,
+        "id": 43
+    },
+    {
+        "name": "Nostrum odio.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.007705",
+        "price": 1273.5,
+        "id": 44
+    },
+    {
+        "name": "Neque.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.007916",
+        "price": 392.5,
+        "id": 45
+    },
+    {
+        "name": "Veniam nulla.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.008055",
+        "price": 854.05,
+        "id": 46
+    },
+    {
+        "name": "Debitis hic.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.008192",
+        "price": 1113.57,
+        "id": 47
+    },
+    {
+        "name": "Totam dolores corporis.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.008384",
+        "price": 2007.88,
+        "id": 48
+    },
+    {
+        "name": "Magnam numquam dolores.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.008514",
+        "price": 1471.58,
+        "id": 49
+    },
+    {
+        "name": "Ut hic reprehenderit.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.008674",
+        "price": 2580.26,
+        "id": 50
+    },
+    {
+        "name": "Iste omnis porro.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.008816",
+        "price": 1112.44,
+        "id": 51
+    },
+    {
+        "name": "Perferendis officia temporibus.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.008954",
+        "price": 2426.2,
+        "id": 52
+    },
+    {
+        "name": "Esse in vel.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.009098",
+        "price": 2051.79,
+        "id": 53
+    },
+    {
+        "name": "Saepe illum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.009225",
+        "price": 2005.52,
+        "id": 54
+    },
+    {
+        "name": "Cumque expedita.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.009364",
+        "price": 228.8,
+        "id": 55
+    },
+    {
+        "name": "Optio qui numquam temporibus.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.009498",
+        "price": 916.95,
+        "id": 56
+    },
+    {
+        "name": "Laboriosam placeat nisi.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.009641",
+        "price": 247.25,
+        "id": 57
+    },
+    {
+        "name": "Natus optio reprehenderit.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.009767",
+        "price": 1832.14,
+        "id": 58
+    },
+    {
+        "name": "Corrupti accusantium eum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.009916",
+        "price": 1617.63,
+        "id": 59
+    },
+    {
+        "name": "Porro est similique aspernatur.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.010065",
+        "price": 957.73,
+        "id": 60
+    },
+    {
+        "name": "Inventore officia.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.010195",
+        "price": 315.55,
+        "id": 61
+    },
+    {
+        "name": "Consequuntur.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.010325",
+        "price": 775.25,
+        "id": 62
+    },
+    {
+        "name": "Aliquam.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.010469",
+        "price": 1565.44,
+        "id": 63
+    },
+    {
+        "name": "Perferendis laboriosam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.010610",
+        "price": 1511.84,
+        "id": 64
+    },
+    {
+        "name": "Itaque et.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.010749",
+        "price": 2880.76,
+        "id": 65
+    },
+    {
+        "name": "Quisquam blanditiis aliquam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.010874",
+        "price": 418.95,
+        "id": 66
+    },
+    {
+        "name": "Illo ab odit.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.011001",
+        "price": 354.16,
+        "id": 67
+    },
+    {
+        "name": "Deserunt nostrum nesciunt.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.011151",
+        "price": 2133.98,
+        "id": 68
+    },
+    {
+        "name": "Debitis non nisi.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.011302",
+        "price": 237.59,
+        "id": 69
+    },
+    {
+        "name": "Quisquam nesciunt fugit reiciendis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.011439",
+        "price": 2515.87,
+        "id": 70
+    },
+    {
+        "name": "Dolorum.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.011588",
+        "price": 58.49,
+        "id": 71
+    },
+    {
+        "name": "Vel enim facere.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.011729",
+        "price": 174.8,
+        "id": 72
+    },
+    {
+        "name": "Quos rem nostrum.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.011863",
+        "price": 1750.35,
+        "id": 73
+    },
+    {
+        "name": "Quis nam nisi.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.012002",
+        "price": 1090.42,
+        "id": 74
+    },
+    {
+        "name": "Temporibus minus.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.012148",
+        "price": 2029.56,
+        "id": 75
+    },
+    {
+        "name": "Ullam qui quibusdam.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.012311",
+        "price": 2894.73,
+        "id": 76
+    },
+    {
+        "name": "Nesciunt id occaecati.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.012462",
+        "price": 411.01,
+        "id": 77
+    },
+    {
+        "name": "Doloremque dolorem.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.012832",
+        "price": 1808.26,
+        "id": 78
+    },
+    {
+        "name": "Harum nostrum consequuntur.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.012973",
+        "price": 1480.12,
+        "id": 79
+    },
+    {
+        "name": "Harum eaque placeat.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.013116",
+        "price": 1677.93,
+        "id": 80
+    },
+    {
+        "name": "Facere eveniet.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.013259",
+        "price": 2813.87,
+        "id": 81
+    },
+    {
+        "name": "Consectetur.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.013390",
+        "price": 1051.98,
+        "id": 82
+    },
+    {
+        "name": "Dolorem blanditiis quaerat deleniti.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.013532",
+        "price": 2797.38,
+        "id": 83
+    },
+    {
+        "name": "Harum quia reiciendis.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.013678",
+        "price": 778.39,
+        "id": 84
+    },
+    {
+        "name": "Placeat culpa.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.013809",
+        "price": 1799.54,
+        "id": 85
+    },
+    {
+        "name": "Labore voluptatem.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.013934",
+        "price": 1383.25,
+        "id": 86
+    },
+    {
+        "name": "Enim.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.014226",
+        "price": 2693.91,
+        "id": 87
+    },
+    {
+        "name": "Deleniti voluptate occaecati.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.014362",
+        "price": 1861.03,
+        "id": 88
+    },
+    {
+        "name": "Suscipit cumque.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.014495",
+        "price": 541.03,
+        "id": 89
+    },
+    {
+        "name": "Ullam qui.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.014638",
+        "price": 2902.04,
+        "id": 90
+    },
+    {
+        "name": "Dicta error quos.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.014776",
+        "price": 2927.12,
+        "id": 91
+    },
+    {
+        "name": "Delectus cum tenetur.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.014926",
+        "price": 581.1,
+        "id": 92
+    },
+    {
+        "name": "Rem natus aperiam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.015069",
+        "price": 1891.1,
+        "id": 93
+    },
+    {
+        "name": "Labore officia perferendis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.015193",
+        "price": 2610.94,
+        "id": 94
+    },
+    {
+        "name": "Aliquam sit alias.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.015319",
+        "price": 872.39,
+        "id": 95
+    },
+    {
+        "name": "Perferendis laboriosam aperiam hic.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.015462",
+        "price": 1055.44,
+        "id": 96
+    },
+    {
+        "name": "Accusantium sequi officia.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.015597",
+        "price": 251.81,
+        "id": 97
+    },
+    {
+        "name": "Possimus iusto distinctio.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.015730",
+        "price": 1147.26,
+        "id": 98
+    },
+    {
+        "name": "Repellendus nostrum placeat.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.015863",
+        "price": 1701.17,
+        "id": 99
+    },
+    {
+        "name": "Maiores enim voluptas fuga.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.016019",
+        "price": 2917.67,
+        "id": 100
+    },
+    {
+        "name": "Harum magnam nihil est.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.016172",
+        "price": 1293.75,
+        "id": 101
+    },
+    {
+        "name": "Necessitatibus assumenda.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.016361",
+        "price": 2538.06,
+        "id": 102
+    },
+    {
+        "name": "Delectus placeat dignissimos.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.016486",
+        "price": 2766.83,
+        "id": 103
+    },
+    {
+        "name": "Labore nemo tenetur.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.016637",
+        "price": 1075.26,
+        "id": 104
+    },
+    {
+        "name": "Provident quae illum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.016801",
+        "price": 2953.67,
+        "id": 105
+    },
+    {
+        "name": "Architecto tempora placeat.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.016959",
+        "price": 2693.91,
+        "id": 106
+    },
+    {
+        "name": "Ad hic voluptatum.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.017109",
+        "price": 1917.45,
+        "id": 107
+    },
+    {
+        "name": "Esse quos ratione.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.017242",
+        "price": 1109.71,
+        "id": 108
+    },
+    {
+        "name": "Sit incidunt.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.017422",
+        "price": 2597.31,
+        "id": 109
+    },
+    {
+        "name": "Assumenda consequatur incidunt.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.017588",
+        "price": 1264.3,
+        "id": 110
+    },
+    {
+        "name": "Animi sed vel.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.017738",
+        "price": 321.43,
+        "id": 111
+    },
+    {
+        "name": "Ipsam cumque.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.017911",
+        "price": 913.23,
+        "id": 112
+    },
+    {
+        "name": "Dolores repudiandae.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.018048",
+        "price": 1042.72,
+        "id": 113
+    },
+    {
+        "name": "Blanditiis aliquid nisi.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.018171",
+        "price": 2991.42,
+        "id": 114
+    },
+    {
+        "name": "Ex nesciunt.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.018290",
+        "price": 1932.3,
+        "id": 115
+    },
+    {
+        "name": "Sint tempore.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.018437",
+        "price": 815.45,
+        "id": 116
+    },
+    {
+        "name": "Dolorum maxime beatae.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.018562",
+        "price": 2472.71,
+        "id": 117
+    },
+    {
+        "name": "Repellendus dolorem.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.018700",
+        "price": 434.91,
+        "id": 118
+    },
+    {
+        "name": "Veniam dolorum.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.018847",
+        "price": 38.77,
+        "id": 119
+    },
+    {
+        "name": "Natus ab.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.018972",
+        "price": 2809.56,
+        "id": 120
+    },
+    {
+        "name": "Vel vero.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.019126",
+        "price": 1820.64,
+        "id": 121
+    },
+    {
+        "name": "Ipsa quos aperiam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.019282",
+        "price": 2573.59,
+        "id": 122
+    },
+    {
+        "name": "Suscipit nesciunt assumenda.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.019425",
+        "price": 1214.86,
+        "id": 123
+    },
+    {
+        "name": "Aliquid.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.019556",
+        "price": 1881.34,
+        "id": 124
+    },
+    {
+        "name": "Qui cupiditate.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.019698",
+        "price": 299.0,
+        "id": 125
+    },
+    {
+        "name": "Earum quibusdam.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.019890",
+        "price": 2274.29,
+        "id": 126
+    },
+    {
+        "name": "Cupiditate dolores repellendus.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.020036",
+        "price": 423.11,
+        "id": 127
+    },
+    {
+        "name": "Eum sapiente.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.020165",
+        "price": 1959.34,
+        "id": 128
+    },
+    {
+        "name": "Aut deserunt.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.020297",
+        "price": 1293.95,
+        "id": 129
+    },
+    {
+        "name": "Omnis vitae.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.020424",
+        "price": 575.53,
+        "id": 130
+    },
+    {
+        "name": "Fugit accusamus blanditiis.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.020565",
+        "price": 2255.0,
+        "id": 131
+    },
+    {
+        "name": "Hic beatae sequi.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.020695",
+        "price": 2179.47,
+        "id": 132
+    },
+    {
+        "name": "Repellat.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.020824",
+        "price": 1126.23,
+        "id": 133
+    },
+    {
+        "name": "Repellendus eaque itaque.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.020958",
+        "price": 891.3,
+        "id": 134
+    },
+    {
+        "name": "Repellat ratione optio.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.021088",
+        "price": 1098.21,
+        "id": 135
+    },
+    {
+        "name": "Quis saepe.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.021222",
+        "price": 2187.4,
+        "id": 136
+    },
+    {
+        "name": "Amet eligendi alias.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.021364",
+        "price": 439.96,
+        "id": 137
+    },
+    {
+        "name": "Quis quae.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.021492",
+        "price": 2382.9,
+        "id": 138
+    },
+    {
+        "name": "Sequi sapiente nemo.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.021633",
+        "price": 1871.6,
+        "id": 139
+    },
+    {
+        "name": "Eius voluptatibus.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.021765",
+        "price": 1979.68,
+        "id": 140
+    },
+    {
+        "name": "Modi.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.021905",
+        "price": 1959.45,
+        "id": 141
+    },
+    {
+        "name": "Voluptatem ex.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.022042",
+        "price": 1370.43,
+        "id": 142
+    },
+    {
+        "name": "Ducimus soluta voluptatum.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.022168",
+        "price": 2557.8,
+        "id": 143
+    },
+    {
+        "name": "Consequuntur est libero.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.022310",
+        "price": 2053.98,
+        "id": 144
+    },
+    {
+        "name": "Error minima eligendi.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.022446",
+        "price": 1648.16,
+        "id": 145
+    },
+    {
+        "name": "Nisi tenetur inventore.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.022627",
+        "price": 2597.71,
+        "id": 146
+    },
+    {
+        "name": "Illum quaerat consectetur.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.022766",
+        "price": 1307.23,
+        "id": 147
+    },
+    {
+        "name": "Fuga quidem eos.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.022983",
+        "price": 472.85,
+        "id": 148
+    },
+    {
+        "name": "Nobis quos.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.023125",
+        "price": 2149.66,
+        "id": 149
+    },
+    {
+        "name": "Voluptatibus deleniti.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.023361",
+        "price": 1321.6,
+        "id": 150
+    },
+    {
+        "name": "Tenetur voluptates.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.023501",
+        "price": 2438.81,
+        "id": 151
+    },
+    {
+        "name": "Optio.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.023658",
+        "price": 1810.08,
+        "id": 152
+    },
+    {
+        "name": "Eum placeat id.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.023790",
+        "price": 1271.83,
+        "id": 153
+    },
+    {
+        "name": "Cumque dolore.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.024063",
+        "price": 1827.09,
+        "id": 154
+    },
+    {
+        "name": "Quia totam quidem.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.024201",
+        "price": 2659.05,
+        "id": 155
+    },
+    {
+        "name": "Asperiores neque atque.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.024336",
+        "price": 1066.47,
+        "id": 156
+    },
+    {
+        "name": "A quis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.024479",
+        "price": 461.73,
+        "id": 157
+    },
+    {
+        "name": "Quibusdam cupiditate odio.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.024616",
+        "price": 1167.33,
+        "id": 158
+    },
+    {
+        "name": "Quisquam possimus eius.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.024742",
+        "price": 226.57,
+        "id": 159
+    },
+    {
+        "name": "Officia asperiores totam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.024872",
+        "price": 1153.73,
+        "id": 160
+    },
+    {
+        "name": "Asperiores vero cupiditate.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.025002",
+        "price": 994.8,
+        "id": 161
+    },
+    {
+        "name": "Quam laboriosam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.025134",
+        "price": 414.98,
+        "id": 162
+    },
+    {
+        "name": "Possimus ratione.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.025264",
+        "price": 203.24,
+        "id": 163
+    },
+    {
+        "name": "Iure velit sequi.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.025404",
+        "price": 394.46,
+        "id": 164
+    },
+    {
+        "name": "Animi in mollitia.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.025537",
+        "price": 928.38,
+        "id": 165
+    },
+    {
+        "name": "Fugit aspernatur illo.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.025830",
+        "price": 1120.05,
+        "id": 166
+    },
+    {
+        "name": "Sint cum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.025946",
+        "price": 2528.27,
+        "id": 167
+    },
+    {
+        "name": "Quae deleniti.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.026099",
+        "price": 771.5,
+        "id": 168
+    },
+    {
+        "name": "Optio ratione.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.026233",
+        "price": 2605.0,
+        "id": 169
+    },
+    {
+        "name": "Aliquam nisi.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.026551",
+        "price": 72.38,
+        "id": 170
+    },
+    {
+        "name": "Vitae asperiores nisi.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.026688",
+        "price": 1981.81,
+        "id": 171
+    },
+    {
+        "name": "Cupiditate omnis expedita.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.026812",
+        "price": 2273.08,
+        "id": 172
+    },
+    {
+        "name": "Cum culpa.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.026948",
+        "price": 115.65,
+        "id": 173
+    },
+    {
+        "name": "Labore magnam non.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.027081",
+        "price": 1830.71,
+        "id": 174
+    },
+    {
+        "name": "Ipsum quibusdam alias.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.027235",
+        "price": 509.92,
+        "id": 175
+    },
+    {
+        "name": "Quam.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.027364",
+        "price": 1633.61,
+        "id": 176
+    },
+    {
+        "name": "Omnis esse.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.027499",
+        "price": 1620.71,
+        "id": 177
+    },
+    {
+        "name": "Consequuntur tempore.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.027629",
+        "price": 1408.44,
+        "id": 178
+    },
+    {
+        "name": "Iure pariatur.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.027759",
+        "price": 599.57,
+        "id": 179
+    },
+    {
+        "name": "Incidunt ullam recusandae.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.027909",
+        "price": 115.06,
+        "id": 180
+    },
+    {
+        "name": "Similique culpa.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.028042",
+        "price": 742.36,
+        "id": 181
+    },
+    {
+        "name": "Doloribus quod.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.028174",
+        "price": 2875.41,
+        "id": 182
+    },
+    {
+        "name": "Debitis ab perferendis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.028294",
+        "price": 1410.82,
+        "id": 183
+    },
+    {
+        "name": "Tenetur ad.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.028424",
+        "price": 1957.12,
+        "id": 184
+    },
+    {
+        "name": "Facilis necessitatibus.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.028558",
+        "price": 2745.11,
+        "id": 185
+    },
+    {
+        "name": "Incidunt repudiandae ab.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.028694",
+        "price": 2247.98,
+        "id": 186
+    },
+    {
+        "name": "Magnam dolorem.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.028818",
+        "price": 2231.21,
+        "id": 187
+    },
+    {
+        "name": "Et eos.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.028941",
+        "price": 2275.93,
+        "id": 188
+    },
+    {
+        "name": "Delectus esse.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.029073",
+        "price": 188.96,
+        "id": 189
+    },
+    {
+        "name": "Doloribus sunt beatae.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.029199",
+        "price": 63.89,
+        "id": 190
+    },
+    {
+        "name": "Minima esse.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.029328",
+        "price": 2997.7,
+        "id": 191
+    },
+    {
+        "name": "Minus excepturi.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.029473",
+        "price": 2056.75,
+        "id": 192
+    },
+    {
+        "name": "Minima quidem.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.029609",
+        "price": 2302.74,
+        "id": 193
+    },
+    {
+        "name": "Non impedit.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.029759",
+        "price": 1743.94,
+        "id": 194
+    },
+    {
+        "name": "Corrupti blanditiis.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.029880",
+        "price": 50.06,
+        "id": 195
+    },
+    {
+        "name": "Nisi nisi.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.030006",
+        "price": 2950.92,
+        "id": 196
+    },
+    {
+        "name": "Doloremque recusandae facilis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.030131",
+        "price": 688.97,
+        "id": 197
+    },
+    {
+        "name": "Ullam.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.030266",
+        "price": 1979.88,
+        "id": 198
+    },
+    {
+        "name": "Voluptas alias in.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.030394",
+        "price": 250.99,
+        "id": 199
+    },
+    {
+        "name": "Commodi in.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.030519",
+        "price": 1147.17,
+        "id": 200
+    },
+    {
+        "name": "At fugit.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.030717",
+        "price": 1874.99,
+        "id": 201
+    },
+    {
+        "name": "Laborum aspernatur.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.030855",
+        "price": 2481.75,
+        "id": 202
+    },
+    {
+        "name": "Nemo placeat corrupti.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.030993",
+        "price": 2162.51,
+        "id": 203
+    },
+    {
+        "name": "Eveniet facere facere.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.031159",
+        "price": 2663.19,
+        "id": 204
+    },
+    {
+        "name": "Quod libero fuga in.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.031300",
+        "price": 1693.2,
+        "id": 205
+    },
+    {
+        "name": "Eveniet eos.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.031427",
+        "price": 1440.39,
+        "id": 206
+    },
+    {
+        "name": "Voluptatum earum quod.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.031685",
+        "price": 1806.93,
+        "id": 207
+    },
+    {
+        "name": "Facilis architecto optio.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.031825",
+        "price": 1497.03,
+        "id": 208
+    },
+    {
+        "name": "Doloribus incidunt suscipit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.031970",
+        "price": 1743.25,
+        "id": 209
+    },
+    {
+        "name": "Error in.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.032094",
+        "price": 905.4,
+        "id": 210
+    },
+    {
+        "name": "Quo perferendis expedita dolorem.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.032226",
+        "price": 149.58,
+        "id": 211
+    },
+    {
+        "name": "Velit non molestiae.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.032381",
+        "price": 1918.52,
+        "id": 212
+    },
+    {
+        "name": "Iure molestias amet.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.032512",
+        "price": 828.32,
+        "id": 213
+    },
+    {
+        "name": "Perferendis voluptas nesciunt provident.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.032649",
+        "price": 1330.19,
+        "id": 214
+    },
+    {
+        "name": "Aut atque aspernatur eius.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.032788",
+        "price": 2828.72,
+        "id": 215
+    },
+    {
+        "name": "Fugit.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.033014",
+        "price": 1902.25,
+        "id": 216
+    },
+    {
+        "name": "Blanditiis laborum.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.033144",
+        "price": 762.86,
+        "id": 217
+    },
+    {
+        "name": "Earum facere.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.033276",
+        "price": 2263.71,
+        "id": 218
+    },
+    {
+        "name": "Reiciendis sequi.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.033404",
+        "price": 1177.24,
+        "id": 219
+    },
+    {
+        "name": "Odit harum natus nesciunt.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.033526",
+        "price": 2173.82,
+        "id": 220
+    },
+    {
+        "name": "Minima corporis.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.033658",
+        "price": 439.03,
+        "id": 221
+    },
+    {
+        "name": "Sint necessitatibus illum.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.033790",
+        "price": 1092.08,
+        "id": 222
+    },
+    {
+        "name": "Id repellat.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.033911",
+        "price": 1659.54,
+        "id": 223
+    },
+    {
+        "name": "Similique dignissimos.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.034034",
+        "price": 1086.48,
+        "id": 224
+    },
+    {
+        "name": "Et enim quae.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.034319",
+        "price": 2365.99,
+        "id": 225
+    },
+    {
+        "name": "Quo reiciendis cum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.034448",
+        "price": 188.6,
+        "id": 226
+    },
+    {
+        "name": "Quis assumenda numquam iusto.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.034585",
+        "price": 2443.88,
+        "id": 227
+    },
+    {
+        "name": "Dolor suscipit doloribus.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.034707",
+        "price": 857.36,
+        "id": 228
+    },
+    {
+        "name": "Eum porro.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.034837",
+        "price": 891.43,
+        "id": 229
+    },
+    {
+        "name": "Praesentium.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.035118",
+        "price": 313.48,
+        "id": 230
+    },
+    {
+        "name": "Ab laudantium mollitia.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.035292",
+        "price": 847.42,
+        "id": 231
+    },
+    {
+        "name": "Pariatur nobis.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.035431",
+        "price": 2707.5,
+        "id": 232
+    },
+    {
+        "name": "Officiis officiis quam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.035586",
+        "price": 2010.1,
+        "id": 233
+    },
+    {
+        "name": "Perspiciatis illum.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.035724",
+        "price": 1410.41,
+        "id": 234
+    },
+    {
+        "name": "Ipsum omnis sed.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.035843",
+        "price": 1990.82,
+        "id": 235
+    },
+    {
+        "name": "Vel porro.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.035986",
+        "price": 1723.15,
+        "id": 236
+    },
+    {
+        "name": "Doloremque nulla.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.036113",
+        "price": 1963.4,
+        "id": 237
+    },
+    {
+        "name": "Officia dolor.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.036370",
+        "price": 1889.15,
+        "id": 238
+    },
+    {
+        "name": "Maxime animi.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.036501",
+        "price": 2811.19,
+        "id": 239
+    },
+    {
+        "name": "Eaque facere illo.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.036642",
+        "price": 28.46,
+        "id": 240
+    },
+    {
+        "name": "Ipsam molestiae quis.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.036781",
+        "price": 196.52,
+        "id": 241
+    },
+    {
+        "name": "Dolorum voluptate velit.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.036925",
+        "price": 2204.06,
+        "id": 242
+    },
+    {
+        "name": "Eaque error.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.037044",
+        "price": 2941.53,
+        "id": 243
+    },
+    {
+        "name": "Veniam labore.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.037176",
+        "price": 1110.58,
+        "id": 244
+    },
+    {
+        "name": "Illum deserunt.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.037299",
+        "price": 492.65,
+        "id": 245
+    },
+    {
+        "name": "Rerum cupiditate cum.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.037419",
+        "price": 1064.63,
+        "id": 246
+    },
+    {
+        "name": "Accusantium laborum.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.037559",
+        "price": 86.1,
+        "id": 247
+    },
+    {
+        "name": "Laboriosam repellat ratione.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.037687",
+        "price": 618.95,
+        "id": 248
+    },
+    {
+        "name": "Deleniti ex.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.037817",
+        "price": 899.87,
+        "id": 249
+    },
+    {
+        "name": "Recusandae quos unde tenetur.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.037953",
+        "price": 333.26,
+        "id": 250
+    },
+    {
+        "name": "Totam id.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.038082",
+        "price": 1978.48,
+        "id": 251
+    },
+    {
+        "name": "Nam at.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.038206",
+        "price": 2730.08,
+        "id": 252
+    },
+    {
+        "name": "Officia ex officia.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.038337",
+        "price": 1648.54,
+        "id": 253
+    },
+    {
+        "name": "Doloribus deserunt.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.038473",
+        "price": 1865.21,
+        "id": 254
+    },
+    {
+        "name": "Ducimus ad.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.038603",
+        "price": 612.98,
+        "id": 255
+    },
+    {
+        "name": "Natus hic.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.038739",
+        "price": 1759.52,
+        "id": 256
+    },
+    {
+        "name": "Asperiores autem at.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.038856",
+        "price": 818.79,
+        "id": 257
+    },
+    {
+        "name": "Atque in corporis deserunt.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.038983",
+        "price": 1590.0,
+        "id": 258
+    },
+    {
+        "name": "Odit tempora.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.039124",
+        "price": 1719.85,
+        "id": 259
+    },
+    {
+        "name": "Nam in.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.039477",
+        "price": 2311.47,
+        "id": 260
+    },
+    {
+        "name": "Deserunt.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.039616",
+        "price": 2812.74,
+        "id": 261
+    },
+    {
+        "name": "Vel veritatis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.039754",
+        "price": 954.24,
+        "id": 262
+    },
+    {
+        "name": "Eum facere iusto.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.039890",
+        "price": 878.2,
+        "id": 263
+    },
+    {
+        "name": "Quos fuga laboriosam.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.040020",
+        "price": 2369.12,
+        "id": 264
+    },
+    {
+        "name": "Exercitationem assumenda.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.040152",
+        "price": 46.35,
+        "id": 265
+    },
+    {
+        "name": "Exercitationem officia iste.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.040287",
+        "price": 1864.69,
+        "id": 266
+    },
+    {
+        "name": "Dicta in debitis quibusdam.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.040416",
+        "price": 2561.06,
+        "id": 267
+    },
+    {
+        "name": "Odio repellendus totam.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.040572",
+        "price": 768.35,
+        "id": 268
+    },
+    {
+        "name": "Minus dolorum.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.040705",
+        "price": 1366.2,
+        "id": 269
+    },
+    {
+        "name": "Non neque eaque.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.040841",
+        "price": 1128.11,
+        "id": 270
+    },
+    {
+        "name": "Sed eaque nam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.040974",
+        "price": 991.17,
+        "id": 271
+    },
+    {
+        "name": "Ipsa impedit suscipit.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.041106",
+        "price": 1392.34,
+        "id": 272
+    },
+    {
+        "name": "Dolores nostrum iusto.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.041242",
+        "price": 2968.95,
+        "id": 273
+    },
+    {
+        "name": "Cumque at dolorem.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.041378",
+        "price": 2318.15,
+        "id": 274
+    },
+    {
+        "name": "Quidem dolorum eum.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.041502",
+        "price": 526.52,
+        "id": 275
+    },
+    {
+        "name": "Repellendus corporis.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.041652",
+        "price": 2773.16,
+        "id": 276
+    },
+    {
+        "name": "Quasi placeat.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.041779",
+        "price": 2595.03,
+        "id": 277
+    },
+    {
+        "name": "Tempora magnam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.041900",
+        "price": 2018.68,
+        "id": 278
+    },
+    {
+        "name": "Tenetur temporibus.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.042022",
+        "price": 1487.44,
+        "id": 279
+    },
+    {
+        "name": "Amet molestias.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.042158",
+        "price": 1712.84,
+        "id": 280
+    },
+    {
+        "name": "Exercitationem nisi.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.042287",
+        "price": 2997.55,
+        "id": 281
+    },
+    {
+        "name": "At voluptatem.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.042421",
+        "price": 1426.24,
+        "id": 282
+    },
+    {
+        "name": "Enim eius velit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.042562",
+        "price": 2799.67,
+        "id": 283
+    },
+    {
+        "name": "Voluptatum unde veritatis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.042699",
+        "price": 2598.4,
+        "id": 284
+    },
+    {
+        "name": "Nobis.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.042827",
+        "price": 2368.6,
+        "id": 285
+    },
+    {
+        "name": "Dignissimos dicta eligendi.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.042950",
+        "price": 938.15,
+        "id": 286
+    },
+    {
+        "name": "Enim reprehenderit totam.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.043088",
+        "price": 2246.29,
+        "id": 287
+    },
+    {
+        "name": "Eius iste labore.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.043206",
+        "price": 764.0,
+        "id": 288
+    },
+    {
+        "name": "Veniam facilis dignissimos.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.043332",
+        "price": 154.3,
+        "id": 289
+    },
+    {
+        "name": "Beatae asperiores.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.043463",
+        "price": 1879.62,
+        "id": 290
+    },
+    {
+        "name": "Quia mollitia.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.043593",
+        "price": 2858.21,
+        "id": 291
+    },
+    {
+        "name": "Suscipit facere deserunt.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.043719",
+        "price": 858.54,
+        "id": 292
+    },
+    {
+        "name": "Vero laudantium minus unde.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.043841",
+        "price": 1098.59,
+        "id": 293
+    },
+    {
+        "name": "Sequi debitis laborum magnam.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.043959",
+        "price": 838.91,
+        "id": 294
+    },
+    {
+        "name": "Voluptatibus odit.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.044083",
+        "price": 1978.29,
+        "id": 295
+    },
+    {
+        "name": "Iure unde officia occaecati.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.044216",
+        "price": 2732.4,
+        "id": 296
+    },
+    {
+        "name": "Excepturi odit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.044335",
+        "price": 2014.31,
+        "id": 297
+    },
+    {
+        "name": "Consequatur.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.044453",
+        "price": 320.38,
+        "id": 298
+    },
+    {
+        "name": "Laboriosam amet reprehenderit.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.044593",
+        "price": 2737.23,
+        "id": 299
+    },
+    {
+        "name": "Temporibus magnam.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.044723",
+        "price": 1569.25,
+        "id": 300
+    },
+    {
+        "name": "Quas rerum.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.044848",
+        "price": 2145.69,
+        "id": 301
+    },
+    {
+        "name": "Voluptates.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.044969",
+        "price": 1945.96,
+        "id": 302
+    },
+    {
+        "name": "Aspernatur quasi.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.045089",
+        "price": 1212.14,
+        "id": 303
+    },
+    {
+        "name": "Ipsum blanditiis.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.045215",
+        "price": 2121.87,
+        "id": 304
+    },
+    {
+        "name": "Dolore fugiat.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.045362",
+        "price": 2717.59,
+        "id": 305
+    },
+    {
+        "name": "Excepturi facilis quam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.045641",
+        "price": 1196.3,
+        "id": 306
+    },
+    {
+        "name": "Aliquid quia doloremque.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.045766",
+        "price": 582.82,
+        "id": 307
+    },
+    {
+        "name": "Perferendis aut.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.045891",
+        "price": 939.78,
+        "id": 308
+    },
+    {
+        "name": "Fuga sunt dolores.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.046019",
+        "price": 778.88,
+        "id": 309
+    },
+    {
+        "name": "Distinctio error aliquam.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.046144",
+        "price": 590.62,
+        "id": 310
+    },
+    {
+        "name": "Labore recusandae.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.046270",
+        "price": 2285.95,
+        "id": 311
+    },
+    {
+        "name": "Aliquam blanditiis.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.046396",
+        "price": 542.62,
+        "id": 312
+    },
+    {
+        "name": "Nam temporibus.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.046525",
+        "price": 2215.98,
+        "id": 313
+    },
+    {
+        "name": "Voluptatibus suscipit.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.046663",
+        "price": 2018.36,
+        "id": 314
+    },
+    {
+        "name": "Veritatis nemo.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.046790",
+        "price": 1679.18,
+        "id": 315
+    },
+    {
+        "name": "Similique.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.046905",
+        "price": 2153.86,
+        "id": 316
+    },
+    {
+        "name": "Voluptatum eos inventore accusamus.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.047028",
+        "price": 423.91,
+        "id": 317
+    },
+    {
+        "name": "Quo autem.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.047153",
+        "price": 258.13,
+        "id": 318
+    },
+    {
+        "name": "Quod accusamus.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.047272",
+        "price": 1315.59,
+        "id": 319
+    },
+    {
+        "name": "Voluptas accusantium.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.047390",
+        "price": 2900.83,
+        "id": 320
+    },
+    {
+        "name": "Nemo aliquam impedit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.047515",
+        "price": 443.63,
+        "id": 321
+    },
+    {
+        "name": "Sapiente placeat.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.047656",
+        "price": 2422.4,
+        "id": 322
+    },
+    {
+        "name": "Quo autem quia.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.047787",
+        "price": 2416.85,
+        "id": 323
+    },
+    {
+        "name": "Quibusdam voluptatum sapiente.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.047915",
+        "price": 1374.86,
+        "id": 324
+    },
+    {
+        "name": "Dolores quaerat.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.048238",
+        "price": 1076.84,
+        "id": 325
+    },
+    {
+        "name": "Rem porro.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.048364",
+        "price": 185.03,
+        "id": 326
+    },
+    {
+        "name": "Expedita qui.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.048477",
+        "price": 2099.98,
+        "id": 327
+    },
+    {
+        "name": "Voluptate nostrum.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.048595",
+        "price": 2217.78,
+        "id": 328
+    },
+    {
+        "name": "Dignissimos molestiae quibusdam excepturi.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.048709",
+        "price": 1336.04,
+        "id": 329
+    },
+    {
+        "name": "Dolore.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.048832",
+        "price": 1708.39,
+        "id": 330
+    },
+    {
+        "name": "Praesentium facere.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.048965",
+        "price": 573.07,
+        "id": 331
+    },
+    {
+        "name": "Omnis veniam saepe.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.049097",
+        "price": 454.15,
+        "id": 332
+    },
+    {
+        "name": "Perferendis neque.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.049236",
+        "price": 970.95,
+        "id": 333
+    },
+    {
+        "name": "Pariatur eius iusto.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.049363",
+        "price": 2258.65,
+        "id": 334
+    },
+    {
+        "name": "Corporis.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.049626",
+        "price": 1147.83,
+        "id": 335
+    },
+    {
+        "name": "Eligendi asperiores distinctio.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.049777",
+        "price": 2198.02,
+        "id": 336
+    },
+    {
+        "name": "Asperiores.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.049919",
+        "price": 1580.39,
+        "id": 337
+    },
+    {
+        "name": "Numquam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.050060",
+        "price": 856.14,
+        "id": 338
+    },
+    {
+        "name": "Minus laboriosam alias.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.050208",
+        "price": 623.85,
+        "id": 339
+    },
+    {
+        "name": "Iste.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.050454",
+        "price": 706.02,
+        "id": 340
+    },
+    {
+        "name": "Et iure dolore magni.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.050592",
+        "price": 2022.97,
+        "id": 341
+    },
+    {
+        "name": "Possimus ipsa ipsa.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.050732",
+        "price": 2185.87,
+        "id": 342
+    },
+    {
+        "name": "Quibusdam corporis.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.050907",
+        "price": 1937.52,
+        "id": 343
+    },
+    {
+        "name": "Qui voluptas at.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.051036",
+        "price": 975.19,
+        "id": 344
+    },
+    {
+        "name": "Aliquam quia voluptas ab.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.051166",
+        "price": 87.45,
+        "id": 345
+    },
+    {
+        "name": "Ipsa enim.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.051292",
+        "price": 1687.09,
+        "id": 346
+    },
+    {
+        "name": "Vel corrupti.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.051424",
+        "price": 2105.88,
+        "id": 347
+    },
+    {
+        "name": "Laudantium placeat reprehenderit.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.051573",
+        "price": 730.09,
+        "id": 348
+    },
+    {
+        "name": "Pariatur molestiae.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.051709",
+        "price": 894.13,
+        "id": 349
+    },
+    {
+        "name": "Odio accusamus expedita.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.051833",
+        "price": 245.47,
+        "id": 350
+    },
+    {
+        "name": "Placeat hic corrupti.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.051974",
+        "price": 1357.07,
+        "id": 351
+    },
+    {
+        "name": "Fugiat blanditiis earum.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.052143",
+        "price": 1546.4,
+        "id": 352
+    },
+    {
+        "name": "Voluptas odio.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.052283",
+        "price": 2976.64,
+        "id": 353
+    },
+    {
+        "name": "Et.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.052428",
+        "price": 1211.15,
+        "id": 354
+    },
+    {
+        "name": "Dolorem corrupti.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.052690",
+        "price": 2526.23,
+        "id": 355
+    },
+    {
+        "name": "Adipisci.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.052827",
+        "price": 871.38,
+        "id": 356
+    },
+    {
+        "name": "Aperiam sed harum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.052975",
+        "price": 2961.86,
+        "id": 357
+    },
+    {
+        "name": "Deserunt eaque vitae.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.053112",
+        "price": 245.6,
+        "id": 358
+    },
+    {
+        "name": "Fugiat et ipsum.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.053938",
+        "price": 2548.41,
+        "id": 359
+    },
+    {
+        "name": "Blanditiis quaerat.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.054072",
+        "price": 355.2,
+        "id": 360
+    },
+    {
+        "name": "Necessitatibus id eaque.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.054217",
+        "price": 1131.37,
+        "id": 361
+    },
+    {
+        "name": "Soluta facilis numquam.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.054361",
+        "price": 55.33,
+        "id": 362
+    },
+    {
+        "name": "Perspiciatis cupiditate mollitia odio.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.054507",
+        "price": 1208.66,
+        "id": 363
+    },
+    {
+        "name": "Harum cum non.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.054651",
+        "price": 2315.53,
+        "id": 364
+    },
+    {
+        "name": "Ullam.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.054792",
+        "price": 493.76,
+        "id": 365
+    },
+    {
+        "name": "Expedita.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.054956",
+        "price": 2546.18,
+        "id": 366
+    },
+    {
+        "name": "Aliquid facilis.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.055091",
+        "price": 1463.87,
+        "id": 367
+    },
+    {
+        "name": "Ducimus nesciunt id.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.055220",
+        "price": 2085.94,
+        "id": 368
+    },
+    {
+        "name": "Eligendi dolores.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.055358",
+        "price": 2325.12,
+        "id": 369
+    },
+    {
+        "name": "Nesciunt.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.055588",
+        "price": 2791.5,
+        "id": 370
+    },
+    {
+        "name": "Voluptas excepturi.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.055733",
+        "price": 1534.67,
+        "id": 371
+    },
+    {
+        "name": "Totam ipsum temporibus.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.055960",
+        "price": 2066.69,
+        "id": 372
+    },
+    {
+        "name": "Sequi rem.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.056117",
+        "price": 2135.86,
+        "id": 373
+    },
+    {
+        "name": "Dolorem doloribus.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.056257",
+        "price": 2247.47,
+        "id": 374
+    },
+    {
+        "name": "Vero aperiam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.056406",
+        "price": 910.87,
+        "id": 375
+    },
+    {
+        "name": "Nostrum et.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.056549",
+        "price": 1370.67,
+        "id": 376
+    },
+    {
+        "name": "Minus nemo ut ipsa.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.056682",
+        "price": 2281.82,
+        "id": 377
+    },
+    {
+        "name": "Culpa.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.056820",
+        "price": 593.01,
+        "id": 378
+    },
+    {
+        "name": "Dicta.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.056961",
+        "price": 56.89,
+        "id": 379
+    },
+    {
+        "name": "Quod expedita.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.057115",
+        "price": 2709.74,
+        "id": 380
+    },
+    {
+        "name": "Sint accusamus ad modi.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.057264",
+        "price": 928.05,
+        "id": 381
+    },
+    {
+        "name": "Maiores.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.057590",
+        "price": 1200.82,
+        "id": 382
+    },
+    {
+        "name": "Nulla maiores.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.057780",
+        "price": 751.89,
+        "id": 383
+    },
+    {
+        "name": "Corporis.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.058007",
+        "price": 2528.41,
+        "id": 384
+    },
+    {
+        "name": "Doloremque expedita velit.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.058242",
+        "price": 1889.54,
+        "id": 385
+    },
+    {
+        "name": "Minima nobis.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.058515",
+        "price": 35.6,
+        "id": 386
+    },
+    {
+        "name": "Nam asperiores velit.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.058725",
+        "price": 1670.32,
+        "id": 387
+    },
+    {
+        "name": "Error similique hic.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.059372",
+        "price": 1496.8,
+        "id": 388
+    },
+    {
+        "name": "Quas nisi dicta.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.059568",
+        "price": 851.46,
+        "id": 389
+    },
+    {
+        "name": "Libero saepe.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.059707",
+        "price": 1409.37,
+        "id": 390
+    },
+    {
+        "name": "Debitis iste.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.059883",
+        "price": 1605.59,
+        "id": 391
+    },
+    {
+        "name": "Omnis consequuntur officiis.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.060130",
+        "price": 2150.08,
+        "id": 392
+    },
+    {
+        "name": "In praesentium nobis.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.060309",
+        "price": 2459.38,
+        "id": 393
+    },
+    {
+        "name": "Enim sapiente.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.060521",
+        "price": 713.48,
+        "id": 394
+    },
+    {
+        "name": "Reiciendis sapiente distinctio.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.060676",
+        "price": 170.2,
+        "id": 395
+    },
+    {
+        "name": "A totam.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.060812",
+        "price": 2452.74,
+        "id": 396
+    },
+    {
+        "name": "Dolorum illo rerum.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.060942",
+        "price": 402.42,
+        "id": 397
+    },
+    {
+        "name": "Assumenda in hic.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.061103",
+        "price": 1575.8,
+        "id": 398
+    },
+    {
+        "name": "Delectus sint ipsum.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.061264",
+        "price": 2630.72,
+        "id": 399
+    },
+    {
+        "name": "Non ab.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.061426",
+        "price": 2896.07,
+        "id": 400
+    },
+    {
+        "name": "Porro est.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.061574",
+        "price": 321.85,
+        "id": 401
+    },
+    {
+        "name": "Libero exercitationem.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.061774",
+        "price": 2443.66,
+        "id": 402
+    },
+    {
+        "name": "Maxime natus.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.061935",
+        "price": 1353.98,
+        "id": 403
+    },
+    {
+        "name": "Labore maiores consequatur.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.062182",
+        "price": 2051.16,
+        "id": 404
+    },
+    {
+        "name": "Earum vel fugit.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.062335",
+        "price": 524.25,
+        "id": 405
+    },
+    {
+        "name": "Sed quae.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.062487",
+        "price": 2767.75,
+        "id": 406
+    },
+    {
+        "name": "Eligendi repellendus.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.062664",
+        "price": 2835.23,
+        "id": 407
+    },
+    {
+        "name": "Magnam quisquam.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.062806",
+        "price": 2068.46,
+        "id": 408
+    },
+    {
+        "name": "Cum amet.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.062993",
+        "price": 1380.54,
+        "id": 409
+    },
+    {
+        "name": "Mollitia expedita.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.063136",
+        "price": 501.02,
+        "id": 410
+    },
+    {
+        "name": "Pariatur iusto est.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.063275",
+        "price": 772.07,
+        "id": 411
+    },
+    {
+        "name": "Iusto eaque.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.063411",
+        "price": 1242.32,
+        "id": 412
+    },
+    {
+        "name": "Atque tempore voluptas.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.063559",
+        "price": 1418.65,
+        "id": 413
+    },
+    {
+        "name": "Officia.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.063689",
+        "price": 548.12,
+        "id": 414
+    },
+    {
+        "name": "Maiores in explicabo corrupti.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.063808",
+        "price": 859.82,
+        "id": 415
+    },
+    {
+        "name": "Et.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.063936",
+        "price": 2421.13,
+        "id": 416
+    },
+    {
+        "name": "Optio quisquam animi.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.064066",
+        "price": 1341.3,
+        "id": 417
+    },
+    {
+        "name": "Omnis asperiores.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.064202",
+        "price": 505.31,
+        "id": 418
+    },
+    {
+        "name": "Corrupti magnam quae.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.064344",
+        "price": 520.92,
+        "id": 419
+    },
+    {
+        "name": "Eveniet.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.064472",
+        "price": 2742.19,
+        "id": 420
+    },
+    {
+        "name": "Non aliquid.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.064641",
+        "price": 2431.17,
+        "id": 421
+    },
+    {
+        "name": "Magni exercitationem.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.064779",
+        "price": 1642.97,
+        "id": 422
+    },
+    {
+        "name": "Ab quos delectus ut.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.064910",
+        "price": 307.63,
+        "id": 423
+    },
+    {
+        "name": "Iste in expedita mollitia.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.065043",
+        "price": 1985.64,
+        "id": 424
+    },
+    {
+        "name": "Libero distinctio.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.065175",
+        "price": 1766.61,
+        "id": 425
+    },
+    {
+        "name": "Veniam occaecati.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.065301",
+        "price": 1815.26,
+        "id": 426
+    },
+    {
+        "name": "A occaecati.",
+        "category": "Casa & Decora\u00e7\u00e3o",
+        "created_at": "2025-02-10T13:42:15.065438",
+        "price": 1676.78,
+        "id": 427
+    },
+    {
+        "name": "Excepturi optio.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.065587",
+        "price": 1208.27,
+        "id": 428
+    },
+    {
+        "name": "Provident nihil.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.065729",
+        "price": 547.94,
+        "id": 429
+    },
+    {
+        "name": "Magnam cum.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.065868",
+        "price": 2036.49,
+        "id": 430
+    },
+    {
+        "name": "Modi corrupti.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.066006",
+        "price": 2211.38,
+        "id": 431
+    },
+    {
+        "name": "Voluptatem quis ex.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.066142",
+        "price": 1001.42,
+        "id": 432
+    },
+    {
+        "name": "Molestiae quos.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.066266",
+        "price": 1125.07,
+        "id": 433
+    },
+    {
+        "name": "Animi.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.066405",
+        "price": 2188.99,
+        "id": 434
+    },
+    {
+        "name": "Saepe.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.066534",
+        "price": 1732.16,
+        "id": 435
+    },
+    {
+        "name": "A nisi odio.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.066671",
+        "price": 1844.43,
+        "id": 436
+    },
+    {
+        "name": "Ab hic.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.066812",
+        "price": 2512.07,
+        "id": 437
+    },
+    {
+        "name": "Repellendus ullam.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.066935",
+        "price": 690.55,
+        "id": 438
+    },
+    {
+        "name": "Nesciunt officia voluptate.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.067059",
+        "price": 1984.69,
+        "id": 439
+    },
+    {
+        "name": "Mollitia voluptatum natus.",
+        "category": "Escrit\u00f3rio",
+        "created_at": "2025-02-10T13:42:15.067187",
+        "price": 2723.6,
+        "id": 440
+    },
+    {
+        "name": "Tempore rerum recusandae.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.067316",
+        "price": 1248.78,
+        "id": 441
+    },
+    {
+        "name": "Aliquam est.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.067443",
+        "price": 131.72,
+        "id": 442
+    },
+    {
+        "name": "Veritatis saepe.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.067584",
+        "price": 32.31,
+        "id": 443
+    },
+    {
+        "name": "Maiores fugiat odit.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.067722",
+        "price": 138.28,
+        "id": 444
+    },
+    {
+        "name": "At odit quis.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.067845",
+        "price": 1416.65,
+        "id": 445
+    },
+    {
+        "name": "Tempore.",
+        "category": "Livros",
+        "created_at": "2025-02-10T13:42:15.067981",
+        "price": 2060.41,
+        "id": 446
+    },
+    {
+        "name": "Sed nesciunt.",
+        "category": "Jogos",
+        "created_at": "2025-02-10T13:42:15.068103",
+        "price": 1000.49,
+        "id": 447
+    },
+    {
+        "name": "Atque dolore.",
+        "category": "Cozinha",
+        "created_at": "2025-02-10T13:42:15.068235",
+        "price": 1540.71,
+        "id": 448
+    },
+    {
+        "name": "Debitis possimus.",
+        "category": "Roupas",
+        "created_at": "2025-02-10T13:42:15.068367",
+        "price": 908.49,
+        "id": 449
+    },
+    {
+        "name": "Fugit id.",
+        "category": "Eletr\u00f4nicos",
+        "created_at": "2025-02-10T13:42:15.068499",
+        "price": 373.43,
+        "id": 450
+    }
+]
