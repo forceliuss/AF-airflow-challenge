@@ -1,165 +1,89 @@
-# Teste Técnico – Engenharia de Dados com Airflow
+# Airflow Variables and DAGs
 
-## Objetivo do Teste
+## Airflow Variables
 
-Avaliar a capacidade técnica do candidato em:
+The following Airflow variables are used in the DAGs:
 
-1. **Construir pipelines de dados** utilizando Airflow.  
-2. **Resolver problemas** comuns de integração (autenticação de API, paginação, reintentos, etc.).  
-3. **Organização de dados** em camadas (Raw, Stage e Trusted).  
-4. **Boas práticas** de versionamento (Git), documentação e containerização (Docker).
+- `api_base_url`: Base URL for the API endpoints.
+- `api_token`: Token for authenticating API requests.
+- `api_refresh_token`: Refresh token for obtaining a new API token.
+- `raw_data_path`: Path to store raw data.
+- `stage_data_path`: Path to store staged data.
+- `trusted_data_path`: Path to store trusted data.
 
-## Requisitos do Sistema
+## DAGs Description
 
-1. **Hardware Mínimo**
-   - CPU: 2 cores
-   - RAM: 8GB
-   - Disco: 30GB livres
+### Carts DAG
 
-2. **Software Necessário**
-   - Docker Engine 20.10+
-   - Docker Compose v2.0+
-   - Git
+This DAG is responsible for extracting, transforming, and loading cart data from the API.
 
-3. **Portas Necessárias**
-   - 8080: Airflow Webserver
-   - 8000: API
-   - 5432: PostgreSQL
-      - airflow: Banco de Dados do Airflow (Não USAR)
-      - api: Banco de Dados da API (Não USAR)
-      - ecommerce: Banco de Dados para Inserir os dados trabalhados
+- **Tasks**:
+  - Extract cart data from the API.
+  - Transform the data to the required format.
+  - Load the transformed data into the raw, stage, and trusted layers.
 
-## O que Será Avaliado
+### Customers DAG
 
-1. **Qualidade e Organização do Código**  
-   - Legibilidade, estrutura de arquivos, uso de funções ou classes para evitar repetição de código.  
-   - Documentação no código e comentários claros.
+This DAG is responsible for extracting, transforming, and loading customer data from the API.
 
-2. **Documentação e Configurações**  
-   - Uso de variáveis do Airflow, conexões e configurações externas (evitar valores "hard-coded").  
-   - README e instruções para rodar o projeto.
+- **Tasks**:
+  - Extract customer data from the API.
+  - Transform the data to the required format.
+  - Load the transformed data into the raw, stage, and trusted layers.
 
-3. **Resiliência e Tratamento de Erros**  
-   - Como o candidato lida com autenticação JWT (token curto + refresh).  
-   - Retry de requests em caso de erros 500, rate-limit e demais inconsistências.
+### Logistics DAG
 
-4. **Organização dos Dados**  
-   - Estrutura das tabelas/arquivos nas camadas Raw, Stage e Trusted.  
-   - Transformações e sumarizações na camada Trusted, pensando em uso de negócio.
+This DAG is responsible for extracting, transforming, and loading logistics data from the API.
 
-5. **Gerenciamento de Containers**  
-   - Uso do Docker Compose para subir os serviços (API, Postgres, Airflow, etc.).  
-   - Familiaridade com logs e troubleshooting básico de containers.
+- **Tasks**:
+  - Extract logistics data from the API.
+  - Transform the data to the required format.
+  - Load the transformed data into the raw, stage, and trusted layers.
 
-6. **Boas Práticas de Git**  
-   - Commits periódicos e semânticos (mensagens claras).  
-   - Estrutura de branch e pull requests/fork, se aplicável.
+### Products DAG
 
-## Como Funciona
+This DAG is responsible for extracting, transforming, and loading product data from the API.
 
-1. **Acesso ao Repositório**  
-   - Faça um **fork** desse repositório para a sua conta Git (ou um clone privado, conforme instrução).
+- **Tasks**:
+  - Extract product data from the API.
+  - Transform the data to the required format.
+  - Load the transformed data into the raw, stage, and trusted layers.
 
-2. **Setup Local**  
-   - Suba todos os serviços em sua máquina usando `docker-compose up --build`.  
-   - Verifique se a API e o Airflow estão funcionando corretamente.
+## How to Run
 
-3. **Desenvolvimento da Solução**  
-   - Crie uma ou mais DAGs no Airflow para **consumir os dados da API** e armazenar nas camadas descritas (Raw, Stage e Trusted).  
-   - Realize **commits periódicos** e com mensagens descritivas.  
-   - Parametrize tudo o que for necessário em variáveis do Airflow ou em configurações (YAML, `.env`, etc.).
+To run the project, follow these steps:
 
-4. **Entrega**  
-   - Finalizada a implementação, disponibilize o repositório (fork) com seu código.  
-   - Inclua um README explicando como rodar, principais componentes e decisões técnicas adotadas.
+1. Clone the repository:
 
-## O que é Esperado
+   ```sh
+   git clone <repository_url>
+   cd <repository_directory>
+   ```
 
-1. **Consumir Endpoints da API** e Armazenar em 3 Estágios:
-   - **Raw**  
-     - Dados brutos, no formato JSON ou Parquet
-     - Estrutura esperada dos arquivos:
-       ```
-       local_storage/
-       ├── raw/
-       │   ├── products/
-       │   │   └── YYYY-MM-DD/
-       │   │       └── products_YYYYMMDD_HHMMSS.json
-       │   ├── carts/
-       │   └── customers/
-       ```
-   - **Stage** (em banco de dados)  
-     - Tabelas intermediárias, com dados "explodidos" (evitando colunas do tipo JSON ou listas)
-     - Estrutura sugerida das tabelas:
-       ```sql
-       -- Exemplo para products
-       CREATE TABLE stage.products (
-           id INTEGER PRIMARY KEY,
-           name VARCHAR(255),
-           price DECIMAL(10,2),
-           category VARCHAR(100),
-           created_at TIMESTAMP,
-           updated_at TIMESTAMP
-       );
-       ```
-   - **Trusted** (em banco de dados)  
-     - Tabelas **criadas e pensadas para relatório**, **sumarizadas** e prontas para consumo analítico
-     - Exemplo de agregações esperadas:
-       ```sql
-       -- Exemplo de visão agregada
-       CREATE TABLE trusted.product_sales_daily (
-           date DATE,
-           category VARCHAR(100),
-           total_sales DECIMAL(10,2),
-           avg_ticket DECIMAL(10,2),
-           num_transactions INTEGER
-       );
-       ```
+2. Initialize the Airflow database:
 
-2. **Estrutura e Padrões da DAG**  
-   - Cada endpoint (por exemplo, `products`, `carts`, `customer`, `logistict`) deve ser **definido em um arquivo YAML** (ou em um YAML “master”), onde se descrevem parâmetros de consumo (URL, rotas, limite de paginação, etc.).  
-     Exemplo:
-     ```resources:
-      customer:                               
-         endpoint: "/customer"                   
-         file_name: customer                   
-         parse_point: ""                       
-         limit: 50                              
-         table_name: tb_customers```
-   - A DAG deve ler esse YAML e **gerar dinamicamente** um _task_group_ (ou tasks individuais) para cada endpoint.  
-   - **Evitar** repetição de código: crie funções ou classes que possam ser reutilizadas para cada endpoint.  
-   - Qualquer parâmetro (URL-base, caminhos de arquivo, horários de execução, tokens) deve ser preferencialmente passado via **Variáveis do Airflow** ou configurações externas.
-   - Usar o dbt será um diferencial
+   ```sh
+   docker-compose up airflow-init
+   ```
 
-4. **Uso do DBT (Diferencial)**
-   - Se optar por usar DBT, criar models para as camadas Stage e Trusted
-   - Documentar a linhagem dos dados
-   - Implementar testes de qualidade de dados
+3. Start the Airflow services:
 
-## Observações Importantes
+   ```sh
+   docker-compose up
+   ```
 
-1. **Tokens e Refresh**  
-   - A API exige login (`POST /token`) com `username=admin` e `password=admin`
-   - O **token expira em 30 minutos**, portanto, implemente refresh quando necessário (`POST /refresh-token`)
+4. Access the Airflow web interface at `http://localhost:8080` and trigger the DAGs.
 
-2. **Erros 500 Aleatórios**  
-   - A API pode retornar `500 Internal Server Error` em algumas chamadas
-   - Esperamos ver **retentativas automáticas** (com backoff, por exemplo)
+## Data Separation: Raw, Stage, and Trusted
 
-3. **Paginação**  
-   - Use `skip` e `limit` para coletar todos os registros. O `limit` máximo é 50
-   - A DAG deve iterar até não haver mais dados
+### Raw Data
 
-4. **Commits**  
-   - Faça commits com mensagens descritivas (ex.: "fix: corrigindo lógica de token refresh" ou "feat: adiciona task de load na camada Trusted")
-   - Isso nos ajuda a entender seu processo de desenvolvimento
+Raw data is the initial data extracted from the source systems (API in this case). It is stored in its original format without any transformations. This layer serves as a backup and allows for reprocessing if needed.
 
-## Entregável
+### Stage Data
 
-- **Repositório Git** (seu fork) com:  
-  1. **DAG(s)** criadas
-  2. **Arquivo(s) YAML** de definição dos endpoints
-  3. **README** documentando a estrutura e explicando como rodar o projeto
-  4. Scripts auxiliares (se necessários) bem organizados e referenciados no README
+Stage data is the intermediate layer where data undergoes initial transformations and cleaning. This layer is used to prepare the data for further processing and loading into the trusted layer. It helps in identifying and handling any data quality issues.
 
-**Ao concluir**, envie o link do seu repositório para o avaliador.
+### Trusted Data
+
+Trusted data is the final layer where data is fully processed, cleaned, and transformed. This layer is used for reporting, analysis, and other business purposes. The data in this layer is considered reliable and ready for consumption by end-users and applications.
