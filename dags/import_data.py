@@ -1,31 +1,34 @@
 import os
-import json
-import requests
+from datetime import datetime
 from airflow import DAG
-from airflow.operators.python import PythonOperator
+from airflow.decorators import task
 from airflow.hooks.base import BaseHook
 from airflow.models.variable import Variable
-from airflow.utils.dates import days_ago
 from requests.exceptions import RequestException
+import json
+import requests
 from time import sleep
-from datetime import datetime
+from typing import Tuple, Optional
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': days_ago(1),
+    'start_date': datetime(2024, 1, 1),
     'retries': 3,
 }
 
 dag = DAG(
-    'fetch_logistict',
+    'import_data',
     default_args=default_args,
-    description='Fetch logistict data from the API',
+    description='Import data from API endpoints using Cosmos tasks',
     schedule_interval=None,
     catchup=False
 )
 
-def _get_token(max_retries=3, retry_delay=5):
+@task
+def get_token() -> Tuple[Optional[str], Optional[str]]:
+    max_retries = 3
+    retry_delay = 5
     hook = BaseHook.get_connection("api_auth")
     url = Variable.get("api_token_url")
     payload = {
@@ -43,7 +46,7 @@ def _get_token(max_retries=3, retry_delay=5):
             refresh_token = response.json().get("refresh_token")
             if not access_token:
                 print("Error: Access token not found in response")
-                return None
+                return None, None
                 
             print(f"Token retrieved successfully on attempt {attempt + 1}")
             return access_token, refresh_token
@@ -52,16 +55,17 @@ def _get_token(max_retries=3, retry_delay=5):
             if attempt == max_retries-1:
                 print(f"Attempt {attempt+1} failed. Retrying in {retry_delay} seconds...")
                 sleep(retry_delay)
-                return None
+                return None, None
             
         except (ValueError, json.JSONDecodeError) as e:
             print(f"Error: Invalid response format: {str(e)}")
-            return None
+            return None, None
             
     print("Error: Failed to retrieve token after all retry attempts")
-    return None
+    return None, None
 
-def _refresh_token(refresh_token):
+@task
+def refresh_token(refresh_token: str) -> Optional[str]:
     refresh_url = Variable.get("api_refresh_token_url")
     
     try:
@@ -78,29 +82,26 @@ def _refresh_token(refresh_token):
         print("Token refreshed successfully")
         return new_access_token
         
-    except RequestException as e:
+    except (RequestException, ValueError, json.JSONDecodeError) as e:
         print(f"Error: Failed to refresh token: {str(e)}")
-        
-    except (ValueError, json.JSONDecodeError) as e:
-        print(f"Error: Invalid refresh response format: {str(e)}")
-        
-    print("Error: Failed to refresh token")
-    return None
+        return None
 
-def fetch_and_store(file_type):
-
+@task
+def fetch_data(data_type: str, token_info: Tuple[Optional[str], Optional[str]]) -> Optional[str]:
     all_data = []
     skip = 0
-    limit = 50 
+    limit = 50
 
     try:
-        print("Getting token...")
-        token, refresh_token = _get_token()
+        token, refresh_token_str = token_info
         if not token:
-            token = _refresh_token(refresh_token)
+            if refresh_token_str:
+                token = refresh_token(refresh_token_str).output
+            if not token:
+                return None
 
         headers = {"Authorization": f"Bearer {token}"}
-        url = Variable.get("api_logistict_url")
+        url = Variable.get(f"api_{data_type}_url")
         
         while True:
             params = {
@@ -122,10 +123,10 @@ def fetch_and_store(file_type):
         date_path = now.strftime("%Y-%m-%d")
         timestamp = now.strftime("%Y%m%d_%H%M%S")
         
-        output_dir = Variable.get(f"raw_{file_type}_path").format(date_path=date_path)
+        output_dir = Variable.get(f"raw_{data_type}_path").format(date_path=date_path)
         os.makedirs(output_dir, exist_ok=True)
         
-        filename = Variable.get(f"raw_{file_type}_file").format(timestamp=timestamp)
+        filename = Variable.get(f"raw_{data_type}_file").format(timestamp=timestamp)
         file_path = os.path.join(output_dir, filename)
         
         with open(file_path, "w") as f:
@@ -135,15 +136,13 @@ def fetch_and_store(file_type):
         return file_path
     
     except Exception as e:
-        print(f"Error: Failed to fetch and store {file_type}: {str(e)}")
+        print(f"Error: Failed to fetch and store {data_type}: {str(e)}")
         return None
 
-
-fetch_logistict_task = PythonOperator(
-    task_id='fetch_logistict',
-    python_callable=fetch_and_store,
-    op_args=["logistict"],
-    dag=dag
-)
-
-fetch_logistict_task
+with dag:
+    token_info = get_token()
+    
+    products_file = fetch_data("products", token_info)
+    customer_file = fetch_data("customer", token_info)
+    carts_file = fetch_data("carts", token_info)
+    logistics_file = fetch_data("logistict", token_info) 
