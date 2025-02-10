@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: raw
+    database: ecommerce
+    schema: public
+    tables:
+      - name: products
+        description: Raw products data from the API
+        columns:
+          - name: id
+            description: Primary key for products
+            tests:
+              - unique
+              - not_null
+
+      - name: customer
+        description: Raw customer data from the API
+        columns:
+          - name: id
+            description: Primary key for customers
+            tests:
+              - unique
+              - not_null
+
+      - name: carts
+        description: Raw cart data from the API
+        columns:
+          - name: id
+            description: Primary key for carts
+            tests:
+              - unique
+              - not_null
+
+      - name: logistict
+        description: Raw logistics data from the API
+        columns:
+          - name: id
+            description: Primary key for logistics
+            tests:
+              - unique
+              - not_null
