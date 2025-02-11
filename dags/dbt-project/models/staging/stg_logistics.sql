@@ -5,18 +5,17 @@ WITH SOURCE AS (
         *
     FROM
         {{ SOURCE('raw',
-        'logistict') }}
+        'logistics') }}
 ), RENAMED AS (
     SELECT
-        ID AS LOGISTICS_ID,
+        ID                    AS LOGISTICS_ID,
         CART_ID,
-        STATUS AS SHIPPING_STATUS,
+        STATUS,
         TRACKING_NUMBER,
-        CARRIER,
-        ESTIMATED_DELIVERY_DATE,
-        ACTUAL_DELIVERY_DATE,
-        SHIPPING_COST::DECIMAL(10,
-        2) AS SHIPPING_COST,
+        SHIPPING_METHOD,
+        SHIPPING_COST,
+        ESTIMATED_DELIVERY_AT,
+        DELIVERED_AT,
         CREATED_AT,
         UPDATED_AT
     FROM

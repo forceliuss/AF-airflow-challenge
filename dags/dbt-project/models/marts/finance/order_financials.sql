@@ -1,4 +1,4 @@
-{{ CONFIG(MATERIALIZED='table') }}
+{{ config(MATERIALIZED='table') }}
 
 WITH ORDER_DETAILS AS (
     SELECT
@@ -12,8 +12,8 @@ WITH ORDER_DETAILS AS (
         L.SHIPPING_STATUS,
         CA.STATUS                       AS ORDER_STATUS
     FROM
-        {{ REF('stg_carts') }} CA
-        LEFT JOIN {{ REF('stg_logistics') }} L
+        {{ ref('stg_carts') }} CA
+        LEFT JOIN {{ ref('stg_logistics') }} L
         ON CA.CART_ID = L.CART_ID
 ), ORDER_ITEMS_DETAIL AS (
     SELECT
@@ -22,8 +22,8 @@ WITH ORDER_DETAILS AS (
         SUM(CI.LINE_TOTAL)                                   AS TOTAL_SELLING_PRICE,
         SUM(CI.LINE_TOTAL - (CI.QUANTITY * P.PRODUCT_PRICE)) AS GROSS_PROFIT
     FROM
-        {{ REF('int_cart_items') }} CI
-        LEFT JOIN {{ REF('stg_products') }} P
+        {{ ref('int_cart_items') }} CI
+        LEFT JOIN {{ ref('stg_products') }} P
         ON CI.PRODUCT_ID = P.PRODUCT_ID
     GROUP BY
         1

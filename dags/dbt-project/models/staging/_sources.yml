@@ -1,0 +1,46 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    tables:
+      - name: products
+        external:
+          location: "/opt/airflow/local_storage/raw/products/"
+          file_format: json
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+      - name: carts
+        external:
+          location: "/opt/airflow/local_storage/raw/carts/"
+          file_format: json
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+      - name: customer
+        external:
+          location: "/opt/airflow/local_storage/raw/customer/"
+          file_format: json
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+      - name: logistics
+        external:
+          location: "/opt/airflow/local_storage/raw/logistics/"
+          file_format: json
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null

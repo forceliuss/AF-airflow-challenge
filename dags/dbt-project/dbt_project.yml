@@ -1,28 +1,34 @@
-name: "airflow_engineering"
+name: "ecommerce"
 version: "1.0.0"
 config-version: 2
 
-profile: "default"
+profile: "ecommerce"
 
 model-paths: ["models"]
-analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
 macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
 
+target-path: "target"
 clean-targets:
   - "target"
   - "dbt_packages"
 
 models:
-  airflow_engineering:
+  ecommerce:
     staging:
       +materialized: view
       +schema: staging
     intermediate:
-      +materialized: table
+      +materialized: view
       +schema: intermediate
     marts:
       +materialized: table
       +schema: marts
+
+vars:
+  raw_data_path: "/opt/airflow/local_storage/raw"
+
+sources:
+  +enabled: true
+  +schema: raw
+  +file_format: json

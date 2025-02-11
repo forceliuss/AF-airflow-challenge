@@ -1,4 +1,4 @@
-{{ CONFIG(MATERIALIZED='table') }}
+{{ config(MATERIALIZED='table') }}
 
 WITH CUSTOMER_ORDERS AS (
     SELECT
@@ -15,8 +15,8 @@ WITH CUSTOMER_ORDERS AS (
         MIN(CA.CREATED_AT)         AS FIRST_ORDER_DATE,
         MAX(CA.CREATED_AT)         AS LAST_ORDER_DATE
     FROM
-        {{ REF('stg_customers') }} C
-        LEFT JOIN {{ REF('stg_carts') }} CA
+        {{ ref('stg_customers') }} C
+        LEFT JOIN {{ ref('stg_carts') }} CA
         ON C.CUSTOMER_ID = CA.CUSTOMER_ID
     WHERE
         CA.STATUS = 'completed'
@@ -34,10 +34,10 @@ WITH CUSTOMER_ORDERS AS (
         COUNT(DISTINCT CI.PRODUCT_ID) AS UNIQUE_PRODUCTS_BOUGHT,
         SUM(CI.QUANTITY)              AS TOTAL_ITEMS_BOUGHT
     FROM
-        {{ REF('stg_customers') }} C
-        LEFT JOIN {{ REF('stg_carts') }} CA
+        {{ ref('stg_customers') }} C
+        LEFT JOIN {{ ref('stg_carts') }} CA
         ON C.CUSTOMER_ID = CA.CUSTOMER_ID
-        LEFT JOIN {{ REF('int_cart_items') }} CI
+        LEFT JOIN {{ ref('int_cart_items') }} CI
         ON CA.CART_ID = CI.CART_ID
     WHERE
         CA.STATUS = 'completed'

@@ -1,11 +1,11 @@
-{{ CONFIG(MATERIALIZED='table') }}
+{{ config(materialized='table') }}
 
 WITH CART_ITEMS AS (
     SELECT
         CART_ID,
         JSONB_ARRAY_ELEMENTS(ITEMS::JSONB) AS ITEM
     FROM
-        {{ REF('stg_carts') }}
+        {{ ref('stg_carts') }}
 ), EXPANDED AS (
     SELECT
         CART_ID,

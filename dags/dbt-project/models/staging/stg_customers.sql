@@ -1,10 +1,10 @@
-{{ CONFIG(MATERIALIZED='view') }}
+{{ config(materialized='view') }}
 
 WITH SOURCE AS (
     SELECT
         *
     FROM
-        {{ SOURCE('raw',
+        {{ source('raw',
         'customer') }}
 ), RENAMED AS (
     SELECT
