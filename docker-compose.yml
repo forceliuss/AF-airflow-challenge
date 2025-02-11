@@ -12,13 +12,23 @@ x-airflow-common: &airflow-common
     AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session"
     AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    # Add DBT environment variables
+    DBT_POSTGRES_HOST: postgresdb
+    DBT_POSTGRES_USER: postgres
+    DBT_POSTGRES_PASSWORD: postgres
+    DBT_POSTGRES_PORT: 5432
+    DBT_POSTGRES_DBNAME: ecommerce
+    # Add DBT virtual environment variables
+    DBT_VENV_PATH: /opt/airflow/dbt_venv
+    PIP_USER: "false"
+    AIRFLOW_HOME: /opt/airflow
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/local_storage:/opt/airflow/local_storage
-    - ${AIRFLOW_PROJ_DIR:-.}/dbt:/opt/airflow/dags/dbt-project
+    - ${AIRFLOW_PROJ_DIR:-.}/dags/dbt-project:/opt/airflow/dags/dbt-project
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on: &airflow-common-depends-on
     redis:
@@ -81,10 +91,12 @@ services:
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
       pip install astronomer-cosmos[dbt-postgres] &&
+      export PIP_USER=true &&
       airflow webserver"
     ports:
       - "8080:8080"
@@ -104,10 +116,12 @@ services:
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
       pip install astronomer-cosmos[dbt-postgres] &&
+      export PIP_USER=true &&
       airflow scheduler"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -125,10 +139,12 @@ services:
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
       pip install astronomer-cosmos[dbt-postgres] &&
+      export PIP_USER=true &&
       airflow celery worker"
     healthcheck:
       test:
