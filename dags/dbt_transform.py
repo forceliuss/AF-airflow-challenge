@@ -1,8 +1,13 @@
 from datetime import datetime
 from airflow import DAG
-from cosmos import DbtTaskGroup, ProjectConfig
-from cosmos.config import ProfileConfig, RenderConfig
+from cosmos import DbtTaskGroup, ProjectConfig, ProfileConfig, ExecutionConfig
+from cosmos.profiles import PostgresUserPasswordProfileMapping
 from pathlib import Path
+
+# Use absolute paths as they will be used inside the Docker container
+DBT_PROJECT_PATH = "/opt/airflow/dags/dbt-project"
+DBT_PROFILES_PATH = "/opt/airflow/dags/dbt-project/profiles.yml"
+DBT_EXECUTABLE_PATH = "/opt/airflow/dbt_venv/bin/dbt"
 
 default_args = {
     'owner': 'airflow',
@@ -11,30 +16,35 @@ default_args = {
     'retries': 1,
 }
 
-dag = DAG(
-    'dbt_transform',
+with DAG(
+    dag_id='dbt_transform',
     default_args=default_args,
     description='Transform raw data using dbt with Cosmos',
     schedule_interval=None,
-    catchup=False
-)
+    catchup=False,
+) as dag:
 
-dbt_project_config = ProjectConfig(
-    dbt_project_path="/opt/airflow/dags/dbt-project",
-)
-
-profile_config = ProfileConfig(
-    profile_name="default",
-    target_name="dev",
-    profiles_yml_filepath="/opt/airflow/dags/dbt-project/profiles.yml"
-)
-
-with dag:
-    dbt_tasks = DbtTaskGroup(
-        group_id="dbt_tasks",
-        project_config=dbt_project_config,
-        profile_config=profile_config,
-        render_config=RenderConfig(
-            select=["path:models"]
+    dbt_dag = DbtTaskGroup(
+        dag=dag,
+        group_id='dbt_transform',
+        default_args=default_args,
+        operator_args={
+            "install_deps": True,
+            "full_refresh": True
+        },
+        project_config=ProjectConfig(
+            dbt_project_path=str(DBT_PROJECT_PATH),
+            models_relative_path="models",
+        ),
+        execution_config=ExecutionConfig(
+            dbt_executable_path=str(DBT_EXECUTABLE_PATH),
+        ),
+        profile_config=ProfileConfig(
+            profile_name="ecommerce",
+            target_name="dev",
+            profile_mapping=PostgresUserPasswordProfileMapping(
+                conn_id="postgres_ecommerce",
+                schema="public"
+            )
         )
-    ) 
+    )

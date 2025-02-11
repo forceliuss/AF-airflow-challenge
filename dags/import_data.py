@@ -1,30 +1,32 @@
 import os
+import json
+import requests
 from datetime import datetime
 from airflow import DAG
 from airflow.decorators import task
 from airflow.hooks.base import BaseHook
 from airflow.models.variable import Variable
 from requests.exceptions import RequestException
-import json
-import requests
 from time import sleep
 from typing import Tuple, Optional
+
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2024, 1, 1),
+    'start_date': datetime(2025, 2, 9),
     'retries': 3,
 }
 
 dag = DAG(
     'import_data',
     default_args=default_args,
-    description='Import data from API endpoints using Cosmos tasks',
+    description='Import/store raw data from API endpoints',
     schedule_interval=None,
     catchup=False
 )
 
+#====== Get access token ======#
 @task
 def get_token() -> Tuple[Optional[str], Optional[str]]:
     max_retries = 3
@@ -86,8 +88,9 @@ def refresh_token(refresh_token: str) -> Optional[str]:
         print(f"Error: Failed to refresh token: {str(e)}")
         return None
 
+#====== Fetch data from API endpoints ======#
 @task
-def fetch_data(data_type: str, token_info: Tuple[Optional[str], Optional[str]]) -> Optional[str]:
+def fetch_and_store_data(data_type: str, token_info: Tuple[Optional[str], Optional[str]]) -> Optional[str]:
     all_data = []
     skip = 0
     limit = 50
@@ -140,9 +143,10 @@ def fetch_data(data_type: str, token_info: Tuple[Optional[str], Optional[str]]) 
         return None
 
 with dag:
+
     token_info = get_token()
     
-    products_file = fetch_data("products", token_info)
-    customer_file = fetch_data("customer", token_info)
-    carts_file = fetch_data("carts", token_info)
-    logistics_file = fetch_data("logistict", token_info) 
+    products_file = fetch_and_store_data("products", token_info)
+    customer_file = fetch_and_store_data("customer", token_info)
+    carts_file = fetch_and_store_data("carts", token_info)
+    logistics_file = fetch_and_store_data("logistict", token_info) 
