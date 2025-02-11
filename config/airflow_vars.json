@@ -1,0 +1,17 @@
+{
+  "api_url": "http://api_auth:8000",
+  "api_token_url": "http://api_auth:8000/token",
+  "api_refresh_token_url": "http://api_auth:8000/api/v1/refresh-token",
+  "api_products_url": "http://api_products:8000/api/v1/products",
+  "api_carts_url": "http://api_carts:8000/api/v1/carts",
+  "api_customer_url": "http://api_customer:8000/api/v1/customer",
+  "api_logistict_url": "http://api_logistict:8000/api/v1/logistict",
+  "raw_products_path": "local_storage/raw/products/{date_path}/",
+  "raw_products_file": "products_{timestamp}.json",
+  "raw_carts_path": "local_storage/raw/carts/{date_path}/",
+  "raw_carts_file": "carts_{timestamp}.json",
+  "raw_customer_path": "local_storage/raw/customer/{date_path}/",
+  "raw_customer_file": "customer_{timestamp}.json",
+  "raw_logistict_path": "local_storage/raw/logistict/{date_path}/",
+  "raw_logistict_file": "logistict_{timestamp}.json"
+}
