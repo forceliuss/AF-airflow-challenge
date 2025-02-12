@@ -124,7 +124,10 @@ def fetch_and_store_data(resource_name: str, token_info: Tuple[Optional[str], Op
             }
             response = requests.get(url, headers=headers, params=params)
             if response.status_code == 500:
-                break
+                print("Received 500 error, retrying ...")
+                response = requests.get(url, headers=headers, params=params)
+                if response.status_code == 500:
+                    break
             response.raise_for_status()
             data = response.json()
             if not data:
