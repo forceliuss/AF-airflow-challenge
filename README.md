@@ -106,8 +106,40 @@ Intermediate data is the layer where data undergoes further transformations and 
 
 Marts data is the final layer where data is fully processed, cleaned, and transformed. This layer is used for reporting, analysis, and other business purposes. The data in this layer is considered reliable and ready for consumption by end-users and applications.
 
-##### Marts Data Files
+#### Finance Division
 
 - `finance/order_financials.sql` - Order financials data, finance related metrics.
-- `marketing/customer_acquisition.sql` - Customer acquisition data, marketing related metrics.
+
+| Metric Name         | Formula                                                  | SQL Name                 |
+| ------------------- | -------------------------------------------------------- | ------------------------ |
+| Product Cost        | QUANTITY _ (PRICE _ (1 - DISCOUNT))                      | TOTAL_COST_PRICE         |
+| Total Selling Price | SUM(LINE_TOTAL)                                          | TOTAL_SELLING_PRICE      |
+| Gross Profit        | SUM(LINE*TOTAL - (QUANTITY * (PRICE \_ (1 - DISCOUNT)))) | GROSS_PROFIT             |
+| Net Profit          | GROSS_PROFIT                                             | NET_PROFIT               |
+| Profit Margin       | (GROSS_PROFIT / ORDER_TOTAL) \* 100                      | PROFIT_MARGIN_PERCENTAGE |
+
+**_ For simplicity, the discount applied to the product price as cost price. _**
+
+#### Marketing Division
+
+- `marketing/customer_orders.sql` - Customer orders data, marketing related metrics.
+
+| Metric Name            | Formula                                     | SQL Name               |
+| ---------------------- | ------------------------------------------- | ---------------------- |
+| Total Orders           | COUNT(DISTINCT CART_ID)                     | TOTAL_ORDERS           |
+| Total Spent            | SUM(CART_TOTAL)                             | TOTAL_SPENT            |
+| Avg Order Value        | AVG(CART_TOTAL)                             | AVG_ORDER_VALUE        |
+| Unique Products Bought | COUNT(DISTINCT PRODUCT_ID)                  | UNIQUE_PRODUCTS_BOUGHT |
+| Total Items Bought     | SUM(QUANTITY)                               | TOTAL_ITEMS_BOUGHT     |
+| Avg Item Price         | TOTAL_SPENT / NULLIF(TOTAL_ITEMS_BOUGHT, 0) | AVG_ITEM_PRICE         |
+
+#### Operations Division
+
 - `operations/order_performance.sql` - Order performance data, operations related metrics.
+
+| Metric Name               | Formula                                        | SQL Name                  |
+| ------------------------- | ---------------------------------------------- | ------------------------- |
+| Unique Products Per Order | COUNT(DISTINCT PRODUCT_ID)                     | UNIQUE_PRODUCTS_PER_ORDER |
+| Total Items Per Order     | SUM(QUANTITY)                                  | TOTAL_ITEMS_PER_ORDER     |
+| Total Order Value         | SUM(LINE_TOTAL)                                | TOTAL_ORDER_VALUE         |
+| Average Item Value        | ORDER_VALUE / NULLIF(TOTAL_ITEMS_PER_ORDER, 0) | AVG_ITEM_VALUE            |
