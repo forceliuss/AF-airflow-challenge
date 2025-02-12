@@ -2,9 +2,9 @@ version: 2
 
 sources:
   - name: raw
-    schema: raw
+    schema: public
     tables:
-      - name: carts
+      - name: raw_carts
         columns:
           - name: id
             description: Primary key
@@ -29,20 +29,20 @@ sources:
             description: Reference to customer
             tests:
               - relationships:
-                  to: source('raw', 'customer')
+                  to: source('raw', 'raw_customer')
                   field: id
           - name: logistic_id
             description: Reference to logistics
             tests:
               - relationships:
-                  to: source('raw', 'logistict')
+                  to: source('raw', 'raw_logistict')
                   field: id
           - name: items
             description: Cart items as JSONB array
           - name: payment_info
             description: Payment information as JSONB
 
-      - name: customer
+      - name: raw_customer
         columns:
           - name: id
             description: Primary key
@@ -62,7 +62,7 @@ sources:
           - name: created_at
             description: Record creation timestamp
 
-      - name: logistict
+      - name: raw_logistict
         columns:
           - name: id
             description: Primary key
@@ -80,7 +80,7 @@ sources:
           - name: created_at
             description: Record creation timestamp
 
-      - name: products
+      - name: raw_products
         columns:
           - name: id
             description: Primary key
