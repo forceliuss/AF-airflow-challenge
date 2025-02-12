@@ -1,165 +1,147 @@
-# Teste Técnico – Engenharia de Dados com Airflow
+# Repository Structure
 
-## Objetivo do Teste
+## Branching Strategy
 
-Avaliar a capacidade técnica do candidato em:
+- `main`: The main branch.
+- `dev`: The development branch.
+- `original-repo`: The original forked repository branch.
 
-1. **Construir pipelines de dados** utilizando Airflow.  
-2. **Resolver problemas** comuns de integração (autenticação de API, paginação, reintentos, etc.).  
-3. **Organização de dados** em camadas (Raw, Stage e Trusted).  
-4. **Boas práticas** de versionamento (Git), documentação e containerização (Docker).
+## Folder Structure
 
-## Requisitos do Sistema
+- `dags`: Contains the DAGs.
+  - `dbt-project`: Contains the dbt project files.
+- `config`: Contains the configuration files.
+- `local_storage`: Contains the raw data (Json files).
 
-1. **Hardware Mínimo**
-   - CPU: 2 cores
-   - RAM: 8GB
-   - Disco: 30GB livres
+## Open Questions
 
-2. **Software Necessário**
-   - Docker Engine 20.10+
-   - Docker Compose v2.0+
-   - Git
+**_Improviments to be made in the code_**
 
-3. **Portas Necessárias**
-   - 8080: Airflow Webserver
-   - 8000: API
-   - 5432: PostgreSQL
-      - airflow: Banco de Dados do Airflow (Não USAR)
-      - api: Banco de Dados da API (Não USAR)
-      - ecommerce: Banco de Dados para Inserir os dados trabalhados
+- Optimize the data loading process.
+- Schedule the DAGs to run daily or periodically.
+- Add a process to handle the data quality checks.
+- Improve the IDs data type and auto increment.
+- Improve logging and error handling.
 
-## O que Será Avaliado
+# Airflow Variables and DAGs
 
-1. **Qualidade e Organização do Código**  
-   - Legibilidade, estrutura de arquivos, uso de funções ou classes para evitar repetição de código.  
-   - Documentação no código e comentários claros.
+## Airflow Variables
 
-2. **Documentação e Configurações**  
-   - Uso de variáveis do Airflow, conexões e configurações externas (evitar valores "hard-coded").  
-   - README e instruções para rodar o projeto.
+The following Airflow variables are used in the pipeline:
+(The upload file is in the `config` directory)
 
-3. **Resiliência e Tratamento de Erros**  
-   - Como o candidato lida com autenticação JWT (token curto + refresh).  
-   - Retry de requests em caso de erros 500, rate-limit e demais inconsistências.
+- `api_url`: The URL of the API.
+- `api_token_url`: The URL of the API token.
+- `api_refresh_token_url`: The URL of the API refresh token.
+- `api_products_url`: The URL of the API products.
+- `api_carts_url`: The URL of the API carts.
+- `api_customer_url`: The URL of the API customer.
+- `api_logistict_url`: The URL of the API logistict.
 
-4. **Organização dos Dados**  
-   - Estrutura das tabelas/arquivos nas camadas Raw, Stage e Trusted.  
-   - Transformações e sumarizações na camada Trusted, pensando em uso de negócio.
+## DAGs Description
 
-5. **Gerenciamento de Containers**  
-   - Uso do Docker Compose para subir os serviços (API, Postgres, Airflow, etc.).  
-   - Familiaridade com logs e troubleshooting básico de containers.
+### Import Data DAG
 
-6. **Boas Práticas de Git**  
-   - Commits periódicos e semânticos (mensagens claras).  
-   - Estrutura de branch e pull requests/fork, se aplicável.
+This DAG is responsible for extracting, transforming, and loading data from the API.
 
-## Como Funciona
+- **Tasks**:
+  - Extract raw data from the API and store it in the `local_storage/raw` directory.
+  - Load the raw data into the dbt raw layer.
 
-1. **Acesso ao Repositório**  
-   - Faça um **fork** desse repositório para a sua conta Git (ou um clone privado, conforme instrução).
+### Dbt Transform DAG
 
-2. **Setup Local**  
-   - Suba todos os serviços em sua máquina usando `docker-compose up --build`.  
-   - Verifique se a API e o Airflow estão funcionando corretamente.
+This DAG is responsible for transforming the data in the dbt raw layer.
 
-3. **Desenvolvimento da Solução**  
-   - Crie uma ou mais DAGs no Airflow para **consumir os dados da API** e armazenar nas camadas descritas (Raw, Stage e Trusted).  
-   - Realize **commits periódicos** e com mensagens descritivas.  
-   - Parametrize tudo o que for necessário em variáveis do Airflow ou em configurações (YAML, `.env`, etc.).
+- **Tasks**:
+  - Extract raw data from the dbt raw layer.
+  - Transform the data to the required table structure.
+  - Load the transformed data into the dbt staging, intermediate and marts layers.
+    **_More about this in the Data Separation section_**
 
-4. **Entrega**  
-   - Finalizada a implementação, disponibilize o repositório (fork) com seu código.  
-   - Inclua um README explicando como rodar, principais componentes e decisões técnicas adotadas.
+# How to Run
 
-## O que é Esperado
+To run the project, follow these steps:
 
-1. **Consumir Endpoints da API** e Armazenar em 3 Estágios:
-   - **Raw**  
-     - Dados brutos, no formato JSON ou Parquet
-     - Estrutura esperada dos arquivos:
-       ```
-       local_storage/
-       ├── raw/
-       │   ├── products/
-       │   │   └── YYYY-MM-DD/
-       │   │       └── products_YYYYMMDD_HHMMSS.json
-       │   ├── carts/
-       │   └── customers/
-       ```
-   - **Stage** (em banco de dados)  
-     - Tabelas intermediárias, com dados "explodidos" (evitando colunas do tipo JSON ou listas)
-     - Estrutura sugerida das tabelas:
-       ```sql
-       -- Exemplo para products
-       CREATE TABLE stage.products (
-           id INTEGER PRIMARY KEY,
-           name VARCHAR(255),
-           price DECIMAL(10,2),
-           category VARCHAR(100),
-           created_at TIMESTAMP,
-           updated_at TIMESTAMP
-       );
-       ```
-   - **Trusted** (em banco de dados)  
-     - Tabelas **criadas e pensadas para relatório**, **sumarizadas** e prontas para consumo analítico
-     - Exemplo de agregações esperadas:
-       ```sql
-       -- Exemplo de visão agregada
-       CREATE TABLE trusted.product_sales_daily (
-           date DATE,
-           category VARCHAR(100),
-           total_sales DECIMAL(10,2),
-           avg_ticket DECIMAL(10,2),
-           num_transactions INTEGER
-       );
-       ```
+1. Clone the repository:
 
-2. **Estrutura e Padrões da DAG**  
-   - Cada endpoint (por exemplo, `products`, `carts`, `customer`, `logistict`) deve ser **definido em um arquivo YAML** (ou em um YAML “master”), onde se descrevem parâmetros de consumo (URL, rotas, limite de paginação, etc.).  
-     Exemplo:
-     ```resources:
-      customer:                               
-         endpoint: "/customer"                   
-         file_name: customer                   
-         parse_point: ""                       
-         limit: 50                              
-         table_name: tb_customers```
-   - A DAG deve ler esse YAML e **gerar dinamicamente** um _task_group_ (ou tasks individuais) para cada endpoint.  
-   - **Evitar** repetição de código: crie funções ou classes que possam ser reutilizadas para cada endpoint.  
-   - Qualquer parâmetro (URL-base, caminhos de arquivo, horários de execução, tokens) deve ser preferencialmente passado via **Variáveis do Airflow** ou configurações externas.
-   - Usar o dbt será um diferencial
+   ```sh
+   git clone <repository_url>
+   cd <repository_directory>
+   ```
 
-4. **Uso do DBT (Diferencial)**
-   - Se optar por usar DBT, criar models para as camadas Stage e Trusted
-   - Documentar a linhagem dos dados
-   - Implementar testes de qualidade de dados
+2. Start the Airflow services:
 
-## Observações Importantes
+   ```sh
+   docker compose up -d --build
+   ```
 
-1. **Tokens e Refresh**  
-   - A API exige login (`POST /token`) com `username=admin` e `password=admin`
-   - O **token expira em 30 minutos**, portanto, implemente refresh quando necessário (`POST /refresh-token`)
+(For testing purposes) 3. Access the Airflow web interface at `http://localhost:8080`
 
-2. **Erros 500 Aleatórios**  
-   - A API pode retornar `500 Internal Server Error` em algumas chamadas
-   - Esperamos ver **retentativas automáticas** (com backoff, por exemplo)
+(For testing purposes) 4. Trigger the DAGs (Import Data and Dbt Transform).
 
-3. **Paginação**  
-   - Use `skip` e `limit` para coletar todos os registros. O `limit` máximo é 50
-   - A DAG deve iterar até não haver mais dados
+# Data Separation: Raw, Staging, Intermediate, and Marts
 
-4. **Commits**  
-   - Faça commits com mensagens descritivas (ex.: "fix: corrigindo lógica de token refresh" ou "feat: adiciona task de load na camada Trusted")
-   - Isso nos ajuda a entender seu processo de desenvolvimento
+## Raw Data
 
-## Entregável
+Raw data is the initial data extracted from the source systems (API in this case). It is stored in its original format without any transformations. This layer serves as a backup and allows for reprocessing if needed. The raw data is stored in the `local_storage/raw` directory.
 
-- **Repositório Git** (seu fork) com:  
-  1. **DAG(s)** criadas
-  2. **Arquivo(s) YAML** de definição dos endpoints
-  3. **README** documentando a estrutura e explicando como rodar o projeto
-  4. Scripts auxiliares (se necessários) bem organizados e referenciados no README
+## Staging Data (Dbt)
 
-**Ao concluir**, envie o link do seu repositório para o avaliador.
+Staging data is the intermediate layer where data undergoes initial transformations and cleaning. This layer is used to prepare the data for further processing and loading into the marts layer. It helps in identifying and handling any data quality issues.
+
+### Staging Data Files
+
+- `stg_carts.sql` - Cart data with carts status and total items.
+- `stg_customers.sql` - Customer data.
+- `stg_logistics.sql` - Logistics data.
+- `stg_products.sql` - Product data.
+
+## Intermediate Data (Dbt)
+
+Intermediate data is the layer where data undergoes further transformations and cleaning. This layer is used to prepare the data for further processing and loading into the marts layer. It helps in identifying and handling any data quality issues.
+
+### Intermediate Data Files
+
+- `int_cart_items.sql` - Cart items data with exploded items.
+
+## Marts Data (Dbt)
+
+Marts data is the final layer where data is fully processed, cleaned, and transformed. This layer is used for reporting, analysis, and other business purposes. The data in this layer is considered reliable and ready for consumption by end-users and applications.
+
+### Finance Division
+
+- `finance/order_financials.sql` - Order financials data, finance related metrics.
+
+| Metric Name         | Formula                                                  | SQL Name                 |
+| ------------------- | -------------------------------------------------------- | ------------------------ |
+| Product Cost        | QUANTITY _ (PRICE _ (1 - DISCOUNT))                      | TOTAL_COST_PRICE         |
+| Total Selling Price | SUM(LINE_TOTAL)                                          | TOTAL_SELLING_PRICE      |
+| Gross Profit        | SUM(LINE*TOTAL - (QUANTITY * (PRICE \_ (1 - DISCOUNT)))) | GROSS_PROFIT             |
+| Net Profit          | GROSS_PROFIT                                             | NET_PROFIT               |
+| Profit Margin       | (GROSS_PROFIT / ORDER_TOTAL) \* 100                      | PROFIT_MARGIN_PERCENTAGE |
+
+**_ For simplicity, the discount applied to the product price as cost price. _**
+
+### Marketing Division
+
+- `marketing/customer_orders.sql` - Customer orders data, marketing related metrics.
+
+| Metric Name            | Formula                                     | SQL Name               |
+| ---------------------- | ------------------------------------------- | ---------------------- |
+| Total Orders           | COUNT(DISTINCT CART_ID)                     | TOTAL_ORDERS           |
+| Total Spent            | SUM(CART_TOTAL)                             | TOTAL_SPENT            |
+| Avg Order Value        | AVG(CART_TOTAL)                             | AVG_ORDER_VALUE        |
+| Unique Products Bought | COUNT(DISTINCT PRODUCT_ID)                  | UNIQUE_PRODUCTS_BOUGHT |
+| Total Items Bought     | SUM(QUANTITY)                               | TOTAL_ITEMS_BOUGHT     |
+| Avg Item Price         | TOTAL_SPENT / NULLIF(TOTAL_ITEMS_BOUGHT, 0) | AVG_ITEM_PRICE         |
+
+### Operations Division
+
+- `operations/order_performance.sql` - Order performance data, operations related metrics.
+
+| Metric Name               | Formula                                        | SQL Name                  |
+| ------------------------- | ---------------------------------------------- | ------------------------- |
+| Unique Products Per Order | COUNT(DISTINCT PRODUCT_ID)                     | UNIQUE_PRODUCTS_PER_ORDER |
+| Total Items Per Order     | SUM(QUANTITY)                                  | TOTAL_ITEMS_PER_ORDER     |
+| Total Order Value         | SUM(LINE_TOTAL)                                | TOTAL_ORDER_VALUE         |
+| Average Item Value        | ORDER_VALUE / NULLIF(TOTAL_ITEMS_PER_ORDER, 0) | AVG_ITEM_VALUE            |

@@ -1,0 +1,9 @@
+{
+  "api_url": "http://api:8000/token",
+  "api_token_url": "http://api:8000/token",
+  "api_refresh_token_url": "http://api:8000/refresh-token",
+  "api_products_url": "http://api:8000/api/v1/products",
+  "api_carts_url": "http://api:8000/api/v1/carts",
+  "api_customer_url": "http://api:8000/api/v1/customer",
+  "api_logistict_url": "http://api:8000/api/v1/logistict"
+}

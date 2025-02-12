@@ -1,0 +1,97 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: raw_carts
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: sale_date
+            description: Date and time of the sale
+            tests:
+              - not_null
+          - name: total_amount
+            description: Total amount of the cart
+            tests:
+              - not_null
+          - name: shipping_info
+            description: Shipping information as JSONB
+          - name: created_at
+            description: Record creation timestamp
+          - name: status
+            description: Cart status
+          - name: customer_id
+            description: Reference to customer
+            tests:
+              - relationships:
+                  to: source('raw', 'raw_customer')
+                  field: id
+          - name: logistic_id
+            description: Reference to logistics
+            tests:
+              - relationships:
+                  to: source('raw', 'raw_logistict')
+                  field: id
+          - name: items
+            description: Cart items as JSONB array
+          - name: payment_info
+            description: Payment information as JSONB
+
+      - name: raw_customer
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: phone
+            description: Customer phone number
+          - name: city
+            description: Customer city
+          - name: address
+            description: Customer address
+          - name: full_name
+            description: Customer full name
+          - name: email
+            description: Customer email
+          - name: created_at
+            description: Record creation timestamp
+
+      - name: raw_logistict
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: company_name
+            description: Logistics company name
+          - name: service_type
+            description: Type of logistics service
+          - name: origin_warehouse
+            description: Origin warehouse location
+          - name: contact_phone
+            description: Contact phone number
+          - name: created_at
+            description: Record creation timestamp
+
+      - name: raw_products
+        columns:
+          - name: id
+            description: Primary key
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: Product name
+          - name: category
+            description: Product category
+          - name: created_at
+            description: Record creation timestamp
+          - name: price
+            description: Product price

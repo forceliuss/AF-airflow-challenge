@@ -1,28 +1,39 @@
-x-airflow-common:
-  &airflow-common
+x-airflow-common: &airflow-common
   image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.10.4}
   # build: .
-  environment:
-    &airflow-common-env
+  environment: &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://postgres:postgres@postgresdb:5432/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://postgres:postgres@postgresdb:5432/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@airflow-redis:6379/0
-    AIRFLOW__CORE__FERNET_KEY: ''
-    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
-    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session'
-    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: 'true'
+    AIRFLOW__CORE__FERNET_KEY: ""
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "true"
+    AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    AIRFLOW__API__AUTH_BACKENDS: "airflow.api.auth.backend.basic_auth,airflow.api.auth.backend.session"
+    AIRFLOW__SCHEDULER__ENABLE_HEALTH_CHECK: "true"
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
+    # Add connection for raw data database
+    AIRFLOW_CONN_POSTGRESDB: postgresql://postgres:postgres@postgresdb:5432/ecommerce
+    # Add DBT environment variables
+    DBT_POSTGRES_HOST: postgresdb
+    DBT_POSTGRES_USER: postgres
+    DBT_POSTGRES_PASSWORD: postgres
+    DBT_POSTGRES_PORT: 5432
+    DBT_POSTGRES_DBNAME: ecommerce
+    DBT_POSTGRES_SCHEMA: public
+    # Add DBT virtual environment variables
+    DBT_VENV_PATH: /opt/airflow/dbt_venv
+    PIP_USER: "false"
+    AIRFLOW_HOME: /opt/airflow
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs
     - ${AIRFLOW_PROJ_DIR:-.}/config:/opt/airflow/config
     - ${AIRFLOW_PROJ_DIR:-.}/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/local_storage:/opt/airflow/local_storage
+    - ${AIRFLOW_PROJ_DIR:-.}/dags/dbt-project:/opt/airflow/dags/dbt-project
   user: "${AIRFLOW_UID:-50000}:0"
-  depends_on:
-    &airflow-common-depends-on
+  depends_on: &airflow-common-depends-on
     redis:
       condition: service_healthy
     postgresdb:
@@ -77,15 +88,20 @@ services:
       retries: 50
       start_period: 30s
     restart: always
-  
+
   airflow-webserver:
     container_name: airflow-webserver
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
+      pip install astronomer-cosmos[dbt-postgres] &&
+      pip install pandas==2.2.0 &&
+      pip install psycopg2-binary==2.9.10 &&
+      export PIP_USER=true &&
       airflow webserver"
     ports:
       - "8080:8080"
@@ -105,9 +121,14 @@ services:
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
+      pip install astronomer-cosmos[dbt-postgres] &&
+      pip install pandas==2.2.0 &&
+      pip install psycopg2-binary==2.9.10 &&
+      export PIP_USER=true &&
       airflow scheduler"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
@@ -125,9 +146,14 @@ services:
     <<: *airflow-common
     command: >
       bash -c "
-      pip install dbt-postgres &&
+      python3 -m venv /opt/airflow/dbt_venv &&
+      /opt/airflow/dbt_venv/bin/pip install dbt-postgres &&
       pip install airflow-dbt &&
       pip install storage_tool &&
+      pip install astronomer-cosmos[dbt-postgres] &&
+      pip install pandas==2.2.0 &&
+      pip install psycopg2-binary==2.9.10 &&
+      export PIP_USER=true &&
       airflow celery worker"
     healthcheck:
       test:
@@ -150,7 +176,11 @@ services:
     <<: *airflow-common
     command: triggerer
     healthcheck:
-      test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
+      test:
+        [
+          "CMD-SHELL",
+          'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"',
+        ]
       interval: 30s
       timeout: 10s
       retries: 5
@@ -215,11 +245,11 @@ services:
         exec /entrypoint airflow version
     environment:
       <<: *airflow-common-env
-      _AIRFLOW_DB_MIGRATE: 'true'
-      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_DB_MIGRATE: "true"
+      _AIRFLOW_WWW_USER_CREATE: "true"
       _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
-      _PIP_ADDITIONAL_REQUIREMENTS: ''
+      _PIP_ADDITIONAL_REQUIREMENTS: ""
     user: "0:0"
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources

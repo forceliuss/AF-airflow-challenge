@@ -1,0 +1,39 @@
+{{ config(materialized = 'table') }}
+
+WITH ORDER_DETAILS AS (
+    SELECT
+        CA.CART_ID,
+        CA.CUSTOMER_ID,
+        CA.CART_TOTAL AS ORDER_TOTAL,
+        CA.CREATED_AT AS ORDER_DATE,
+        CA.STATUS AS ORDER_STATUS
+    FROM
+        {{ ref('stg_carts') }} CA
+), ORDER_ITEMS_DETAIL AS (
+    SELECT
+        CI.CART_ID,
+        SUM(CI.QUANTITY * (P.PRICE * (1 - CI.DISCOUNT))) AS TOTAL_COST_PRICE,
+        SUM(CI.LINE_TOTAL) AS TOTAL_SELLING_PRICE,
+        SUM(CI.LINE_TOTAL - (CI.QUANTITY * (P.PRICE * (1 - CI.DISCOUNT)))) AS GROSS_PROFIT
+    FROM
+        {{ ref('int_cart_items') }} CI
+        LEFT JOIN {{ ref('stg_products') }} P
+        ON CI.PRODUCT_ID = P.PRODUCT_ID
+    GROUP BY
+        1
+)
+SELECT
+    OD.*,
+    OID.TOTAL_COST_PRICE,
+    OID.TOTAL_SELLING_PRICE,
+    OID.GROSS_PROFIT,
+    OID.GROSS_PROFIT AS NET_PROFIT,
+    CASE
+        WHEN OD.ORDER_TOTAL > 0
+        THEN (OID.GROSS_PROFIT / OD.ORDER_TOTAL) * 100
+        ELSE 0
+    END AS PROFIT_MARGIN_PERCENTAGE
+FROM
+    ORDER_DETAILS OD
+    LEFT JOIN ORDER_ITEMS_DETAIL OID
+    ON OD.CART_ID = OID.CART_ID

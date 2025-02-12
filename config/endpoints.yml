@@ -1,0 +1,21 @@
+resources:
+  products:
+    endpoint: "http://api:8000/api/v1/products"
+    file_name: "products_{timestamp}.json"
+    local_path: "local_storage/raw/products/{date_path}/"
+    limit: 50
+  carts:
+    endpoint: "http://api:8000/api/v1/carts"
+    file_name: "carts_{timestamp}.json"
+    local_path: "local_storage/raw/carts/{date_path}/"
+    limit: 50
+  customer:
+    endpoint: "http://api:8000/api/v1/customer"
+    file_name: "customer_{timestamp}.json"
+    local_path: "local_storage/raw/customer/{date_path}/"
+    limit: 50
+  logistict:
+    endpoint: "http://api:8000/api/v1/logistict"
+    file_name: "logistict_{timestamp}.json"
+    local_path: "local_storage/raw/logistict/{date_path}/"
+    limit: 50
