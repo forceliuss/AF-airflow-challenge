@@ -1,3 +1,28 @@
+# Repository Structure
+
+## Branching Strategy
+
+- `main`: The main branch.
+- `dev`: The development branch.
+- `original-repo`: The original forked repository branch.
+
+## Folder Structure
+
+- `dags`: Contains the DAGs.
+  - `dbt-project`: Contains the dbt project files.
+- `config`: Contains the configuration files.
+- `local_storage`: Contains the raw data (Json files).
+
+## Open Questions
+
+**_Improviments to be made in the code_**
+
+- Optimize the data loading process.
+- Schedule the DAGs to run daily or periodically.
+- Add a process to handle the data quality checks.
+- Improve the IDs data type and auto increment.
+- Improve logging and error handling.
+
 # Airflow Variables and DAGs
 
 ## Airflow Variables
@@ -15,44 +40,25 @@ The following Airflow variables are used in the pipeline:
 
 ## DAGs Description
 
-### Carts DAG
+### Import Data DAG
 
-This DAG is responsible for extracting, transforming, and loading cart data from the API.
-
-- **Tasks**:
-  - Extract cart data from the API.
-  - Transform the data to the required format.
-  - Explode the items in the cart to get a list of products.
-  - Load the transformed data into the raw, staging, and marts layers.
-
-### Customers DAG
-
-This DAG is responsible for extracting, transforming, and loading customer data from the API.
+This DAG is responsible for extracting, transforming, and loading data from the API.
 
 - **Tasks**:
-  - Extract customer data from the API.
-  - Transform the data to the required format.
-  - Load the transformed data into the raw, staging, and marts layers.
+  - Extract raw data from the API and store it in the `local_storage/raw` directory.
+  - Load the raw data into the dbt raw layer.
 
-### Logistics DAG
+### Dbt Transform DAG
 
-This DAG is responsible for extracting, transforming, and loading logistics data from the API.
-
-- **Tasks**:
-  - Extract logistics data from the API.
-  - Transform the data to the required format.
-  - Load the transformed data into the raw, staging, and marts layers.
-
-### Products DAG
-
-This DAG is responsible for extracting, transforming, and loading product data from the API.
+This DAG is responsible for transforming the data in the dbt raw layer.
 
 - **Tasks**:
-  - Extract product data from the API.
-  - Transform the data to the required format.
-  - Load the transformed data into the raw, staging, and marts layers.
+  - Extract raw data from the dbt raw layer.
+  - Transform the data to the required table structure.
+  - Load the transformed data into the dbt staging, intermediate and marts layers.
+    **_More about this in the Data Separation section_**
 
-## How to Run
+# How to Run
 
 To run the project, follow these steps:
 
@@ -63,50 +69,46 @@ To run the project, follow these steps:
    cd <repository_directory>
    ```
 
-2. Initialize the Airflow database:
+2. Start the Airflow services:
 
    ```sh
-   docker compose up airflow-init
+   docker compose up -d --build
    ```
 
-3. Start the Airflow services:
+(For testing purposes) 3. Access the Airflow web interface at `http://localhost:8080`
 
-   ```sh
-   docker compose up
-   ```
+(For testing purposes) 4. Trigger the DAGs (Import Data and Dbt Transform).
 
-(For testing purposes) 4. Access the Airflow web interface at `http://localhost:8080` and trigger the DAGs.
+# Data Separation: Raw, Staging, Intermediate, and Marts
 
-## Data Separation: Raw, Staging, Intermediate, and Marts
-
-### Raw Data
+## Raw Data
 
 Raw data is the initial data extracted from the source systems (API in this case). It is stored in its original format without any transformations. This layer serves as a backup and allows for reprocessing if needed. The raw data is stored in the `local_storage/raw` directory.
 
-### Staging Data (Dbt)
+## Staging Data (Dbt)
 
 Staging data is the intermediate layer where data undergoes initial transformations and cleaning. This layer is used to prepare the data for further processing and loading into the marts layer. It helps in identifying and handling any data quality issues.
 
-##### Staging Data Files
+### Staging Data Files
 
 - `stg_carts.sql` - Cart data with carts status and total items.
 - `stg_customers.sql` - Customer data.
 - `stg_logistics.sql` - Logistics data.
 - `stg_products.sql` - Product data.
 
-### Intermediate Data (Dbt)
+## Intermediate Data (Dbt)
 
 Intermediate data is the layer where data undergoes further transformations and cleaning. This layer is used to prepare the data for further processing and loading into the marts layer. It helps in identifying and handling any data quality issues.
 
-##### Intermediate Data Files
+### Intermediate Data Files
 
 - `int_cart_items.sql` - Cart items data with exploded items.
 
-### Marts Data (Dbt)
+## Marts Data (Dbt)
 
 Marts data is the final layer where data is fully processed, cleaned, and transformed. This layer is used for reporting, analysis, and other business purposes. The data in this layer is considered reliable and ready for consumption by end-users and applications.
 
-#### Finance Division
+### Finance Division
 
 - `finance/order_financials.sql` - Order financials data, finance related metrics.
 
@@ -120,7 +122,7 @@ Marts data is the final layer where data is fully processed, cleaned, and transf
 
 **_ For simplicity, the discount applied to the product price as cost price. _**
 
-#### Marketing Division
+### Marketing Division
 
 - `marketing/customer_orders.sql` - Customer orders data, marketing related metrics.
 
@@ -133,7 +135,7 @@ Marts data is the final layer where data is fully processed, cleaned, and transf
 | Total Items Bought     | SUM(QUANTITY)                               | TOTAL_ITEMS_BOUGHT     |
 | Avg Item Price         | TOTAL_SPENT / NULLIF(TOTAL_ITEMS_BOUGHT, 0) | AVG_ITEM_PRICE         |
 
-#### Operations Division
+### Operations Division
 
 - `operations/order_performance.sql` - Order performance data, operations related metrics.
 
