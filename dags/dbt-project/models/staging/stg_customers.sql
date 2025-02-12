@@ -1,25 +1,19 @@
-{{ config(materialized='view') }}
+{{ config(materialized = 'view') }}
 
 WITH SOURCE AS (
     SELECT
         *
     FROM
-        {{ source('raw',
-        'customer') }}
+        {{ source('raw', 'raw_customer') }}
 ), RENAMED AS (
     SELECT
-        ID          AS CUSTOMER_ID,
-        FIRST_NAME,
-        LAST_NAME,
+        ID AS CUSTOMER_ID,
+        FULL_NAME,
         EMAIL,
         PHONE,
         ADDRESS,
         CITY,
-        STATE,
-        COUNTRY,
-        POSTAL_CODE,
-        CREATED_AT,
-        UPDATED_AT
+        CREATED_AT
     FROM
         SOURCE
 )

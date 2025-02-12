@@ -10,11 +10,14 @@ WITH CART_ITEMS AS (
     SELECT
         CART_ID,
         (ITEM->>'product_id')::INTEGER AS PRODUCT_ID,
+        (ITEM->>'product_name')::TEXT AS PRODUCT_NAME,
         (ITEM->>'quantity')::INTEGER AS QUANTITY,
-        (ITEM->>'price')::DECIMAL(10,
+        (ITEM->>'unit_price')::DECIMAL(10,
         2) AS UNIT_PRICE,
-        (ITEM->>'quantity')::INTEGER * (ITEM->>'price')::DECIMAL(10,
-        2) AS LINE_TOTAL
+        (ITEM->>'line_total')::DECIMAL(10,
+        2) AS LINE_TOTAL,
+        (ITEM->>'discount')::DECIMAL(10,
+        2) AS DISCOUNT
     FROM
         CART_ITEMS
 )
@@ -22,3 +25,5 @@ SELECT
     *
 FROM
     EXPANDED
+
+    

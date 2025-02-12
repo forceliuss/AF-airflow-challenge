@@ -1,19 +1,16 @@
-{{ config(MATERIALIZED='table') }}
+{{ config(materialized = 'table') }}
 
 WITH CUSTOMER_ORDERS AS (
     SELECT
         C.CUSTOMER_ID,
-        C.FIRST_NAME,
-        C.LAST_NAME,
+        C.FULL_NAME,
         C.EMAIL,
         C.CITY,
-        C.STATE,
-        C.COUNTRY,
         COUNT(DISTINCT CA.CART_ID) AS TOTAL_ORDERS,
-        SUM(CA.CART_TOTAL)         AS TOTAL_SPENT,
-        AVG(CA.CART_TOTAL)         AS AVG_ORDER_VALUE,
-        MIN(CA.CREATED_AT)         AS FIRST_ORDER_DATE,
-        MAX(CA.CREATED_AT)         AS LAST_ORDER_DATE
+        SUM(CA.CART_TOTAL) AS TOTAL_SPENT,
+        AVG(CA.CART_TOTAL) AS AVG_ORDER_VALUE,
+        MIN(CA.CREATED_AT) AS FIRST_ORDER_DATE,
+        MAX(CA.CREATED_AT) AS LAST_ORDER_DATE
     FROM
         {{ ref('stg_customers') }} C
         LEFT JOIN {{ ref('stg_carts') }} CA
@@ -21,18 +18,12 @@ WITH CUSTOMER_ORDERS AS (
     WHERE
         CA.STATUS = 'completed'
     GROUP BY
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7
+        1, 2, 3, 4
 ), ORDER_ITEMS AS (
     SELECT
         C.CUSTOMER_ID,
         COUNT(DISTINCT CI.PRODUCT_ID) AS UNIQUE_PRODUCTS_BOUGHT,
-        SUM(CI.QUANTITY)              AS TOTAL_ITEMS_BOUGHT
+        SUM(CI.QUANTITY) AS TOTAL_ITEMS_BOUGHT
     FROM
         {{ ref('stg_customers') }} C
         LEFT JOIN {{ ref('stg_carts') }} CA

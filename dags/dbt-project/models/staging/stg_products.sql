@@ -1,20 +1,16 @@
-{{ config(materialized='view') }}
+{{ config(materialized = 'view') }}
 
 WITH SOURCE AS (
     SELECT
         *
     FROM
-        {{ source('raw',
-        'products') }}
+        {{ source('raw', 'raw_products') }}
 )
 SELECT
-    ID             AS PRODUCT_ID,
-    NAME           AS PRODUCT_NAME,
-    DESCRIPTION,
-    PRICE,
+    ID AS PRODUCT_ID,
+    NAME AS PRODUCT_NAME,
     CATEGORY,
-    STOCK_QUANTITY,
-    CREATED_AT,
-    UPDATED_AT
+    PRICE,
+    CREATED_AT
 FROM
     SOURCE
