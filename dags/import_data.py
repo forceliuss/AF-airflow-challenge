@@ -1,14 +1,18 @@
 import os
 import json
+import yaml
 import requests
+import pandas as pd
 from datetime import datetime
 from airflow import DAG
+from psycopg2.extras import execute_values
 from airflow.decorators import task
 from airflow.hooks.base import BaseHook
 from airflow.models.variable import Variable
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 from requests.exceptions import RequestException
 from time import sleep
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Dict, List
 
 
 default_args = {
@@ -25,6 +29,11 @@ dag = DAG(
     schedule_interval=None,
     catchup=False
 )
+
+def load_endpoints_config() -> Dict:
+    config_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'config', 'endpoints.yml')
+    with open(config_path, 'r') as f:
+        return yaml.safe_load(f)['resources']
 
 #====== Get access token ======#
 @task
@@ -90,10 +99,12 @@ def refresh_token(refresh_token: str) -> Optional[str]:
 
 #====== Fetch data from API endpoints ======#
 @task
-def fetch_and_store_data(data_type: str, token_info: Tuple[Optional[str], Optional[str]]) -> Optional[str]:
+def fetch_and_store_data(resource_name: str, token_info: Tuple[Optional[str], Optional[str]]) -> Optional[str]:
     all_data = []
+    
+    config = load_endpoints_config()[resource_name]
+    limit = config['limit']
     skip = 0
-    limit = 50
 
     try:
         token, refresh_token_str = token_info
@@ -104,7 +115,7 @@ def fetch_and_store_data(data_type: str, token_info: Tuple[Optional[str], Option
                 return None
 
         headers = {"Authorization": f"Bearer {token}"}
-        url = Variable.get(f"api_{data_type}_url")
+        url = config['endpoint']
         
         while True:
             params = {
@@ -126,27 +137,142 @@ def fetch_and_store_data(data_type: str, token_info: Tuple[Optional[str], Option
         date_path = now.strftime("%Y-%m-%d")
         timestamp = now.strftime("%Y%m%d_%H%M%S")
         
-        output_dir = Variable.get(f"raw_{data_type}_path").format(date_path=date_path)
+        output_dir = config['local_path'].format(date_path=date_path)
         os.makedirs(output_dir, exist_ok=True)
         
-        filename = Variable.get(f"raw_{data_type}_file").format(timestamp=timestamp)
+        filename = config['file_name'].format(timestamp=timestamp)
         file_path = os.path.join(output_dir, filename)
         
         with open(file_path, "w") as f:
             json.dump(all_data, f, indent=4)
         
-        print(f"Successfully fetched and stored {len(all_data)} records")
+        print(f"Successfully fetched and stored {len(all_data)} records for {resource_name}")
         return file_path
     
     except Exception as e:
-        print(f"Error: Failed to fetch and store {data_type}: {str(e)}")
+        print(f"Error: Failed to fetch and store {resource_name}: {str(e)}")
         return None
 
-with dag:
+#====== Load JSON files into database ======#
+@task
+def load_json_to_database(file_paths: Dict[str, str]) -> None:
+    postgres_hook = PostgresHook(postgres_conn_id="postgresdb")
+    
+    table_schemas = {
+        'carts': """
+            CREATE TABLE IF NOT EXISTS raw_carts (
+                id SERIAL PRIMARY KEY,
+                sale_date TIMESTAMP,
+                total_amount NUMERIC,
+                shipping_info JSONB,
+                created_at TIMESTAMP,
+                status VARCHAR(50),
+                customer_id INTEGER,
+                logistic_id INTEGER,
+                items JSONB,
+                payment_info JSONB
+            )
+        """,
+        'customer': """
+            CREATE TABLE IF NOT EXISTS raw_customer (
+                id SERIAL PRIMARY KEY,
+                phone VARCHAR(50),
+                city VARCHAR(100),
+                address VARCHAR(255),
+                full_name VARCHAR(255),
+                email VARCHAR(255),
+                created_at TIMESTAMP
+            )
+        """,
+        'logistict': """
+            CREATE TABLE IF NOT EXISTS raw_logistict (
+                id SERIAL PRIMARY KEY,
+                company_name VARCHAR(255),
+                service_type VARCHAR(50),
+                origin_warehouse VARCHAR(255),
+                contact_phone VARCHAR(50),
+                created_at TIMESTAMP
+            )
+        """,
+        'products': """
+            CREATE TABLE IF NOT EXISTS raw_products (
+                id SERIAL PRIMARY KEY,
+                name VARCHAR(255),
+                category VARCHAR(255),
+                created_at TIMESTAMP,
+                price NUMERIC
+            )
+        """
+    }
+    
+    def process_json_file(file_path: str) -> List[Dict]:
+        with open(file_path, 'r') as f:
+            data = json.load(f)
+            return data if isinstance(data, list) else [data]
+    
+    with postgres_hook.get_conn() as conn:
+        with conn.cursor() as cur:
+            
+            for resource_name in table_schemas.keys():
+                table_name = f"raw_{resource_name}"
+                cur.execute(f"DROP TABLE IF EXISTS {table_name}")
+            conn.commit()
+            
+            for table_name, schema in table_schemas.items():
+                cur.execute(schema)
+            conn.commit()
+            
+            for resource_name, file_path in file_paths.items():
+                if not file_path:
+                    print(f"Skipping {resource_name} due to missing file path")
+                    continue
+                
+                table_name = f"raw_{resource_name}"
+                print(f"Loading data into {table_name} from {file_path}")
+                
+                try:
+                    data = process_json_file(file_path)
+                    if not data:
+                        print(f"No data found in {file_path}")
+                        continue
+                    
+                    df = pd.DataFrame(data)
+                    
+                    timestamp_cols = ['created_at', 'sale_date']
+                    for col in timestamp_cols:
+                        if col in df.columns:
+                            df[col] = pd.to_datetime(df[col])
+                    
+                    if resource_name == 'carts':
+                        json_cols = ['shipping_info', 'items', 'payment_info']
+                        for col in json_cols:
+                            if col in df.columns:
+                                df[col] = df[col].apply(json.dumps)
+                    
+                    columns = list(df.columns)
+                    values = [tuple(x) for x in df.to_numpy()]
+                    
+                    insert_query = f"""
+                        INSERT INTO {table_name} ({', '.join(columns)})
+                        VALUES %s
+                    """
+                    execute_values(cur, insert_query, values)
+                    
+                    conn.commit()
+                    print(f"Successfully loaded {len(data)} records into {table_name}")
+                    
+                except Exception as e:
+                    conn.rollback()
+                    print(f"Error loading data into {table_name}: {str(e)}")
+                    raise
 
+with dag:
     token_info = get_token()
     
-    products_file = fetch_and_store_data("products", token_info)
-    customer_file = fetch_and_store_data("customer", token_info)
-    carts_file = fetch_and_store_data("carts", token_info)
-    logistics_file = fetch_and_store_data("logistict", token_info) 
+    resources = load_endpoints_config()
+    fetch_tasks = {}
+    
+    for resource_name in resources.keys():
+        fetch_tasks[resource_name] = fetch_and_store_data(resource_name, token_info)
+    
+    load_json_to_database(fetch_tasks)

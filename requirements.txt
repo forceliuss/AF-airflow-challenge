@@ -3,7 +3,8 @@ Faker==36.0.0
 fastapi==0.115.8
 jose==1.0.0
 passlib==1.7.4
-psycopg2==2.9.10
+psycopg2-binary==2.9.10
+pandas==2.2.0
 python-dotenv==1.0.1
 Requests==2.32.3
 SQLAlchemy==1.4.54

@@ -2,9 +2,7 @@ from datetime import datetime
 from airflow import DAG
 from cosmos import DbtTaskGroup, ProjectConfig, ProfileConfig, ExecutionConfig
 from cosmos.profiles import PostgresUserPasswordProfileMapping
-from pathlib import Path
 
-# Use absolute paths as they will be used inside the Docker container
 DBT_PROJECT_PATH = "/opt/airflow/dags/dbt-project"
 DBT_PROFILES_PATH = "/opt/airflow/dags/dbt-project/profiles.yml"
 DBT_EXECUTABLE_PATH = "/opt/airflow/dbt_venv/bin/dbt"
@@ -44,7 +42,7 @@ with DAG(
             target_name="dev",
             profile_mapping=PostgresUserPasswordProfileMapping(
                 conn_id="postgres_ecommerce",
-                schema="public"
+                profile_args={"schema": "public"}
             )
         )
     )
